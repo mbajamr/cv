@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <!-- Mask to punch out the Facebook 'f' shape with matching bold styling -->
+    <mask id="facebook-mask">
+      <!-- Everything white stays visible -->
+      <rect x="0" y="0" width="100" height="100" fill="#ffffff" />
+      
+      <!-- Black 'f' geometry cuts through to create smooth, bold transparency -->
+      <!-- Styled to sit slightly lower and offset to replicate the classic logo look -->
+      <path d="M 56 74 L 56 51 L 64 51 L 65.5 41 L 56 41 L 56 35.5 C 56 33, 57 31, 61 31 L 66 31 L 66 21.5 C 63.5 21, 57 20.5, 52.5 20.5 C 42 20.5, 36.5 26.5, 36.5 37.5 L 36.5 41 L 29 41 L 29 51 L 36.5 51 L 36.5 74 Z" 
+            fill="#000000" />
+    </mask>
+  </defs>
+
+  <!-- White base circle with the transparent Facebook 'f' mask applied -->
+  <circle cx="50" cy="50" r="50" fill="#ffffff" mask="url(#facebook-mask)" />
+</svg>

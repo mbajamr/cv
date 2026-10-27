@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            font-family: Arial, Helvetica, sans-serif;
+
+            color: #1f2937;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            color: #172033;
+            font-size: 28px;
+        }
+
+        .item {
+            background: #ffffff;
+            border: 1px solid #dfe4ea;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+        }
+
+        .item-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 20px;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .item-header:hover {
+            background: #f8fafc;
+        }
+
+        .title {
+            font-size: 17px;
+            font-weight: 600;
+            color: #1e3a5f;
+        }
+
+        .toggle {
+            width: 30px;
+            height: 30px;
+            border: 1px solid #1e3a5f;
+            border-radius: 50%;
+            background: white;
+            color: #1e3a5f;
+            font-size: 20px;
+            line-height: 26px;
+            text-align: center;
+            cursor: pointer;
+            flex-shrink: 0;
+            margin-left: 15px;
+        }
+
+        .subcontent {
+            display: none;
+            padding: 0 20px 20px 20px;
+            color: #4b5563;
+            line-height: 1.65;
+            font-size: 15px;
+            border-top: 1px solid #eef1f4;
+        }
+
+        .item.open .content {
+            display: block;
+        }
+
+        .item.open .toggle {
+            font-size: 18px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 12px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .title {
+                font-size: 15px;
+            }
+        }
+
+        /* 2. ACCORDION STYLES */
+        details {
+            background-color: #ffffff;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            transition: box-shadow 0.3s ease;
+        }
+
+        /* Changes look when open */
+        details[open] {
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            border-color: #007bff;
+        }
+
+        /* The clickable button header */
+        summary {
+            padding: 20px;
+            font-size: 1.25rem;
+            font-weight: 600;
+            cursor: pointer;
+            list-style: none; /* Hides default browser arrow */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+            background-color: #ffffff;
+            color: #2d3748;
+        }
+
+        /* Custom indicator icon using CSS pseudo-elements */
+        summary::after {
+            content: "+";
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: #007bff;
+            transition: transform 0.2s ease;
+        }
+
+        /* Rotate indicator icon when opened */
+        details[open] summary::after {
+            content: "−";
+            transform: rotate(180deg);
+        }
+
+        summary:hover {
+            background-color: #f8fafc;
+        }
+
+        /* Smooth reveal animation */
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-5px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Simple flex list for features */
+        .feature-list {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+        
+        .feature-list li {
+            margin-bottom: 8px;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        
+        <div class="page-header">
+            <h1>Project: Marketing Information Portal – MKT, Slots, Orders & Totals</h1>
+            <p>Click any section header below to instantly expand or collapse details.</p>
+        </div>
+
+        <!-- SECTION 1: CORE FEATURES -->
+        <details> <!-- Added "open" attribute so the first one defaults to unhidden -->
+            <summary>1. Challenge</summary>
+			<div class="content">
+Marketing and executive management needed a consolidated view of commercial performance, combining information distributed across Oracle databases and BAAN ERP structures. Accessing orders, shipments, demand projections, commercial opportunities, and customer feedback through separate systems made it difficult to obtain consistent indicators and monitor business performance across organizational levels.
+
+The organization also needed a structured way to manage market-demand projections, compare forecasts against actual results, and improve forecasting accuracy. In addition, user access management required greater flexibility to reduce dependency on IT for routine permission changes.
+
+			</div>
+        </details>
+
+        <details>
+            <summary>2. Objectives</summary>
+			<div class="content">
+- Consolidate commercial and operational information from Oracle databases and BAAN ERP into a centralized reporting portal.
+- Provide standardized indicators, detailed reports, and graphical dashboards for Marketing, senior management, and executive leadership.
+- Implement demand-projection management and measure forecast accuracy against actual business results.
+- Improve visibility into orders, shipments, promised orders, commercial opportunities, proposals, bids, and customer feedback.
+- Enable users to move from high-level performance indicators to detailed operational information.
+- Introduce role-based access management that allows authorized Marketing personnel to administer information permissions independently.
+
+			</div>
+        </details>
+
+        <details>
+            <summary>3. Actions</summary>
+			<div class="content">
+- Integrated data from Oracle tables and BAAN ERP structures to create a consolidated foundation for commercial reporting and analysis.
+- Used Oracle Forms to maintain and manage underlying information and Oracle-based reporting processes to generate business analyses.
+- Developed an HTML/JSP reporting portal using Oracle Portal to provide centralized access to reports, tables, and graphical indicators.
+- Implemented a demand-projection management system allowing Marketing specialists to maintain market-demand forecasts and compare projections against actual results.
+- Developed indicators to measure forecasting accuracy and provide feedback on demand-planning performance.
+- Established interfaces between Oracle data structures and tables within the BAAN ERP environment to generate consolidated commercial indicators.
+- Implemented reporting capabilities covering received orders, shipments, promised orders (PAHO), CM review opportunities and follow-up, quoted proposal details, bid volumes, and customer feedback.
+- Designed reporting capabilities for different organizational levels, from Marketing specialists to senior management and the General Manager.
+- Implemented role-based permissions and delegated user-access administration to authorized Marketing personnel, reducing reliance on IT for routine access changes.
+
+
+			</div>
+        </details>
+
+        <details>
+            <summary>4. Results</summary>
+			<div class="content">
+- Centralized commercial reporting: Consolidated information from Oracle and BAAN ERP into a single portal for Marketing and executive users.
+- Improved management visibility: Provided standardized indicators and graphical dashboards covering orders, shipments, demand, and commercial opportunities.
+- Measurable forecasting performance: Enabled comparison of projected demand against actual results, providing a basis for evaluating forecast accuracy.
+- Greater operational transparency: Allowed users to navigate from summarized indicators to detailed reports on specific commercial activities.
+- More autonomous access management: Enabled authorized Marketing personnel to manage user permissions directly, reducing administrative dependency on IT.
+- Consistent business information: Established a common reporting environment supporting commercial monitoring and decision-making across multiple organizational levels.
+
+			</div>
+        </details>
+
+        <details>
+            <summary>5. Business Impact</summary>
+			<div class="content">
+Established a centralized business-intelligence portal connecting ERP information with Marketing operations and executive decision-making. By combining commercial reporting, demand-forecast monitoring, and delegated access management, the solution improved visibility into business performance, enabled more systematic evaluation of forecasting accuracy, and gave Marketing greater autonomy over its information and user access.
+
+			</div>
+        </details>
+
+	</div>
+
+</body>
+</html>

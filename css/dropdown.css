@@ -1,0 +1,52 @@
+
+/* Contenedor del menú */
+.dropdown {
+    position: absolute;
+    display: inline-block;
+    top: 7%;
+    left: 75%;
+	z-index: 20000;
+}
+
+/* El menú flotante (Oculto por defecto) */
+.dropdown-menu {
+    position: absolute;
+    top: 100%; /* Se pega justo debajo del enlace para que no se cierre */
+    right: 0;
+    display: none; /* Evita que las opciones salgan disparadas como enlaces comunes */
+    min-width: 160px;
+    background-color: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 5px 0;
+	z-index: 20000;
+}
+
+/* Muestra el menú al pasar el ratón por encima del contenedor */
+.dropdown:hover .dropdown-menu {
+    display: block;
+	z-index: 20000;
+}
+
+/* Los enlaces que están tanto en la barra como dentro del menú */
+.nav-link {
+    display: block;
+    padding: 8px 16px;
+    color: white; /* Color para el botón principal de la barra */
+    text-decoration: none;
+    transition: background 0.15s ease;
+}
+
+/* Ajuste específico para los enlaces que quedan DENTRO del menú desplegable */
+.dropdown-menu .nav-link {
+    color: #2d3748; /* Texto oscuro para que se lea sobre el fondo blanco */
+    text-align: left;
+}
+
+/* Efecto de color al pasar el cursor sobre las opciones */
+.dropdown-menu .nav-link:hover {
+    background-color: #f1f5f9;
+    color: #009FDA;
+}

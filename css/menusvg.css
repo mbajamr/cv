@@ -1,0 +1,354 @@
+
+#Menu img {
+    width: 95%;
+    height: auto;
+    display: block;
+	margin: 10 auto;
+}
+
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px;
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+
+
+        /* =========================================
+           MENU CONTAINER
+           ========================================= */
+
+        .svg-menu {
+            position: relative;
+            display: inline-block;
+        }
+
+
+        /* =========================================
+           MENU BUTTON
+           ========================================= */
+
+        .svg-menu-button {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 12px 20px;
+
+            background: #009FDA;
+            color: white;
+
+            border: none;
+            border-radius: 8px;
+
+            font-size: 16px;
+            font-weight: 600;
+
+            cursor: pointer;
+
+            text-decoration: none;
+        }
+
+        .svg-menu-button:hover {
+            background: #008ac0;
+        }
+
+
+        /* Arrow */
+
+        .svg-menu-arrow {
+            font-size: 12px;
+
+            transition: transform .2s ease;
+        }
+
+        .svg-menu:hover .svg-menu-arrow {
+            transform: rotate(180deg);
+        }
+
+
+        /* =========================================
+           MODERN CARD
+           ========================================= */
+
+        .svg-dropdown {
+            position: absolute;
+
+            top: calc(100% + 10px);
+            left: 0;
+
+            width: 720px;
+            max-width: calc(100vw - 40px);
+
+            padding: 22px;
+
+            background: white;
+
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, .12),
+                0 2px 8px rgba(0, 0, 0, .05);
+
+            opacity: 0;
+            visibility: hidden;
+
+            transform: translateY(-8px);
+
+            transition:
+                opacity .2s ease,
+                transform .2s ease,
+                visibility .2s ease;
+
+            z-index: 10000;
+        }
+
+
+        /* Show menu */
+
+        .svg-menu:hover .svg-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+
+        /* =========================================
+           HEADER
+           ========================================= */
+
+        .svg-dropdown-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            margin-bottom: 18px;
+
+            padding-bottom: 15px;
+
+            border-bottom: 1px solid #edf2f7;
+        }
+
+        .svg-dropdown-title {
+            margin: 0;
+
+            font-size: 20px;
+            font-weight: 600;
+
+            color: #1a202c;
+        }
+
+        .svg-dropdown-subtitle {
+            margin: 4px 0 0;
+
+            font-size: 13px;
+
+            color: #718096;
+        }
+
+
+        /* =========================================
+           CAR GRID
+           ========================================= */
+
+        .svg-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 10px;
+        }
+
+
+        /* =========================================
+           CAR OPTION
+           ========================================= */
+
+        .svg-option {
+            display: flex;
+            align-items: center;
+
+            gap: 10px;
+
+            padding: 12px;
+
+            border-radius: 9px;
+
+            color: #2d3748;
+
+            text-decoration: none;
+
+            transition:
+                background .15s ease,
+                color .15s ease,
+                transform .15s ease;
+        }
+
+        .svg-option:hover {
+            background: #f1f8fb;
+
+            color: #009FDA;
+
+            transform: translateX(2px);
+        }
+
+
+        /* =========================================
+           ICON
+           ========================================= */
+
+        .svg-icon {
+            width: 38px;
+            height: 38px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            flex-shrink: 0;
+
+            background: #edf8fc;
+
+            border-radius: 8px;
+
+            font-size: 20px;
+        }
+
+
+        /* =========================================
+           TEXT
+           ========================================= */
+
+        .svg-name {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .svg-description {
+            margin-top: 2px;
+
+            font-size: 11px;
+
+            color: #a0aec0;
+        }
+
+
+        /* =========================================
+           CATEGORY HEADINGS
+           ========================================= */
+
+        .category {
+            grid-column: 1 / -1;
+
+            margin-top: 8px;
+            margin-bottom: -2px;
+
+            padding-bottom: 5px;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            color: #718096;
+
+            text-transform: uppercase;
+            letter-spacing: .7px;
+        }
+
+
+        /* =========================================
+           RESPONSIVE
+           ========================================= */
+
+        @media (max-width: 800px) {
+
+            .svg-dropdown {
+                width: 500px;
+            }
+
+            .svg-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 550px) {
+
+            body {
+                padding: 20px;
+            }
+
+            .svg-dropdown {
+                width: calc(100vw - 40px);
+            }
+
+            .svg-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+/* =========================================================
+   7. HORIZONTAL NAVIGATION BAR
+   ========================================================= */
+
+.menu7 {
+    display: flex;
+    gap: 5px;
+}
+
+.menu7 > a,
+.menu7 .drop > a {
+    display: block;
+
+    padding: 10px 18px;
+
+    color: blue;
+    text-decoration: none;
+}
+
+.menu7 .drop {
+    position: relative;
+}
+
+.menu7 .drop-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    display: none;
+
+    width: 180px;
+
+    background: skyblue;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,.15);
+
+    padding: 5px 0;
+}
+
+.menu7 .drop:hover .drop-menu {
+    display: block;
+}
+
+.menu7 .drop-menu a {
+    display: block;
+
+    padding: 10px 16px;
+
+    color: #333;
+    text-decoration: none;
+}
+
+.menu7 .drop-menu a:hover {
+    background: #f1f5f9;
+}

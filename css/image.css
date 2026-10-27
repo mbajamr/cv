@@ -1,0 +1,37 @@
+  .gallery img {
+    display: none;
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Show the selected image */
+  .gallery img:target {
+    display: block;
+  }
+
+  /* Default image when there is no fragment */
+  .gallery:not(:has(img:target)) #Base-group {
+    display: block;
+  }
+
+/*
+  .gallery img {
+    display: none;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .gallery:has(#Base-group:target) #Base-group,
+  .gallery:has(#Crt-group:target) #Crt-group,
+  .gallery:has(#Sk-group:target) #Sk-group,
+  .gallery:has(#Prj-group:target) #Prj-group,
+  .gallery:has(#EP-group:target) #EP-group,
+  .gallery:has(#Ed-group:target) #Ed-group {
+    display: block;
+  }
+
+  // Default image when there is no URL fragment 
+  .gallery:not(:has(img:target)) #Sk-group {
+    display: block;
+  }
+*/

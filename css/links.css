@@ -1,0 +1,46 @@
+
+        /* Modern Bootstrap-compatible Dropdowns & Navs */
+        .nav-link {
+            display: inline-block;
+            padding: 8px 16px;
+            color: white;
+            text-decoration: none;
+            border-radius: var(--border-radius-sm);
+            transition: background 0.2s ease;
+        }
+
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        /* Footer Layout */
+        #Footer {
+            background: var(--primary-blue);
+            color: white;
+            padding: 30px 20px;
+            border-radius: var(--border-radius-md);
+            text-align: center;
+            margin-top: 40px;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.02);
+        }
+
+.nav-links-inline {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px; /* Espacio entre botones */
+}
+
+.nav-inline-item {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+/* Efecto moderno al pasar el cursor o presionar */
+.nav-inline-item:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.15);
+}

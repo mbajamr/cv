@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <!-- Mask to punch out the Twitter bird shape with matching bold styling -->
+    <mask id="twitter-mask">
+      <!-- Everything white stays visible -->
+      <rect x="0" y="0" width="100" height="100" fill="#ffffff" />
+      
+      <!-- Black bird path cuts through to create smooth, bold transparency -->
+      <path d="M 73 31.5 
+               C 70.8 32.5, 68.4 33.2, 65.9, 33.5 
+               C 68.4 32, 70.3 29.6, 71.2, 26.8 
+               C 68.9, 28.2, 66.3, 29.2, 63.5, 29.7 
+               C 61.3, 27.4, 58.2, 26, 54.8, 26 
+               C 48.3, 26, 43, 31.3, 43, 37.8 
+               C 43, 38.7, 43.1, 39.6, 43.3, 40.5 
+               C 33.5, 40, 24.8, 35.3, 19, 28.1 
+               C 18, 29.8, 17.4, 31.8, 17.4, 33.9 
+               C 17.4, 38, 19.5, 41.6, 22.7, 43.7 
+               C 20.8, 43.6, 18.9, 43.1, 17.4, 42.2 
+               C 17.4, 42.2, 17.4, 42.3, 17.4, 42.3 
+               C 17.4, 48, 21.4, 52.7, 26.8, 53.8 
+               C 25.8, 54.1, 24.8, 54.2, 23.7, 54.2 
+               C 23, 54.2, 22.2, 54.1, 21.5, 54 
+               C 23, 58.7, 27.4, 62.1, 32.6, 62.2 
+               C 28.5, 65.4, 23.4, 67.3, 17.8, 67.3 
+               C 16.8, 67.3, 15.9, 67.2, 15, 67.1 
+               C 20.3, 70.5, 26.5, 72.5, 33.2, 72.5 
+               C 55.1, 72.5, 67.1, 54.4, 67.1, 38.7 
+               C 67.1, 38.2, 67.1, 37.7, 67, 37.2 
+               C 69.3, 35.5, 71.3, 33.6, 73, 31.5 Z" 
+            fill="#000000" />
+    </mask>
+  </defs>
+
+  <!-- White base circle with the transparent Twitter bird mask applied -->
+  <circle cx="50" cy="50" r="50" fill="#ffffff" mask="url(#twitter-mask)" />
+</svg>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            font-family: Arial, Helvetica, sans-serif;
+
+            color: #1f2937;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            color: #172033;
+            font-size: 28px;
+        }
+
+        .item {
+            background: #ffffff;
+            border: 1px solid #dfe4ea;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+        }
+
+        .item-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 20px;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .item-header:hover {
+            background: #f8fafc;
+        }
+
+        .title {
+            font-size: 17px;
+            font-weight: 600;
+            color: #1e3a5f;
+        }
+
+        .toggle {
+            width: 30px;
+            height: 30px;
+            border: 1px solid #1e3a5f;
+            border-radius: 50%;
+            background: white;
+            color: #1e3a5f;
+            font-size: 20px;
+            line-height: 26px;
+            text-align: center;
+            cursor: pointer;
+            flex-shrink: 0;
+            margin-left: 15px;
+        }
+
+        .subcontent {
+            display: none;
+            padding: 0 20px 20px 20px;
+            color: #4b5563;
+            line-height: 1.65;
+            font-size: 15px;
+            border-top: 1px solid #eef1f4;
+        }
+
+        .item.open .content {
+            display: block;
+        }
+
+        .item.open .toggle {
+            font-size: 18px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 12px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .title {
+                font-size: 15px;
+            }
+        }
+
+        /* 2. ACCORDION STYLES */
+        details {
+            background-color: #ffffff;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            transition: box-shadow 0.3s ease;
+        }
+
+        /* Changes look when open */
+        details[open] {
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            border-color: #007bff;
+        }
+
+        /* The clickable button header */
+        summary {
+            padding: 20px;
+            font-size: 1.25rem;
+            font-weight: 600;
+            cursor: pointer;
+            list-style: none; /* Hides default browser arrow */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+            background-color: #ffffff;
+            color: #2d3748;
+        }
+
+        /* Custom indicator icon using CSS pseudo-elements */
+        summary::after {
+            content: "+";
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: #007bff;
+            transition: transform 0.2s ease;
+        }
+
+        /* Rotate indicator icon when opened */
+        details[open] summary::after {
+            content: "−";
+            transform: rotate(180deg);
+        }
+
+        summary:hover {
+            background-color: #f8fafc;
+        }
+
+        /* Smooth reveal animation */
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-5px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Simple flex list for features */
+        .feature-list {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+        
+        .feature-list li {
+            margin-bottom: 8px;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        
+        <div class="page-header">
+            <h1>Project: Technology Transformation & Strategic Operations</h1>
+            <p>Click any section header below to instantly expand or collapse details.</p>
+        </div>
+
+        <!-- SECTION 1: CORE FEATURES -->
+        <details> <!-- Added "open" attribute so the first one defaults to unhidden -->
+            <summary>1. Challenge</summary>
+			<div class="content">
+The organization was executing a large-scale technology transformation involving thousands of technology professionals, substantial annual financial commitments, and multiple technology domains.
+
+The scale and complexity of the transformation required close coordination across technology delivery, commercial management, finance, contracts, and resource planning. Rapid organizational growth added further challenges in workforce capacity planning, identifying resource gaps, managing risks, and maintaining alignment between business priorities, delivery commitments, and financial objectives.
+
+			</div>
+        </details>
+
+        <details>
+            <summary>2. Objectives</summary>
+			<div class="content">
+- Support coordination across technology delivery, commercial management, finance, contracts, and resource planning.
+- Align workforce capacity and staffing plans with evolving business requirements and transformation priorities.
+- Identify resource gaps, operational risks, and issues requiring escalation.
+- Support financial and commercial management to maintain alignment between delivery commitments, available resources, and financial plans.
+- Contribute to strategic discussions and leadership decision-making on organizational requirements, data governance, and transformation priorities.
+
+			</div>
+        </details>
+
+        <details>
+            <summary>3. Actions</summary>
+			<div class="content">
+- Collaborated with transformation leadership and directors responsible for commercial management, finance, contracts, resource planning, and technology delivery.
+- Supported capacity and staffing planning during a period of significant organizational growth.
+- Helped identify workforce gaps, planning risks, and issues requiring management attention or escalation.
+- Contributed to aligning resource availability with evolving business requirements and technology delivery priorities.
+- Supported financial and commercial management activities to maintain consistency between delivery objectives, resource capacity, and financial planning.
+- Participated in strategic discussions involving data governance, organizational design requirements, resource planning, and transformation priorities.
+- Contributed to cross-functional coordination and leadership decision support across a complex, multi-technology organization.
+
+
+			</div>
+        </details>
+
+        <details>
+            <summary>4. Results</summary>
+			<div class="content">
+- Supported large-scale transformation governance: Contributed to coordination across a technology organization comprising thousands of professionals.
+- Strengthened capacity planning: Helped identify staffing gaps and align resource planning with changing business requirements.
+- Improved risk visibility: Supported the identification and escalation of resource and organizational issues requiring management attention.
+- Supported financial and delivery alignment: Contributed to coordinating resource capacity, financial planning, commercial considerations, and delivery objectives.
+- Enabled strategic decision support: Participated in leadership discussions addressing organizational requirements, data governance, and transformation priorities.
+- Strengthened cross-functional collaboration: Worked across technology, finance, commercial, contracts, and resource management functions.
+
+			</div>
+        </details>
+
+        <details>
+            <summary>5. Business Impact</summary>
+			<div class="content">
+Contributed to the governance and coordination of a large-scale technology transformation by connecting workforce planning, financial and commercial management, and technology delivery priorities. The work supported leadership visibility into organizational capacity, resource risks, and transformation requirements, helping maintain alignment across a complex technology organization during a period of significant growth.
+
+			</div>
+        </details>
+
+	</div>
+
+</body>
+</html>

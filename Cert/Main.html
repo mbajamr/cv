@@ -1,0 +1,501 @@
+<style>
+	/* ==========================================================
+	   CORE RESPONSIVE STRUCTURE (The Mobile-to-Desktop Magic)
+	   ========================================================== */
+	.table-container {
+	  width: 100%;
+	  overflow-x: auto;
+	  border-radius: var(--radius);
+	}
+
+	.modern-table {
+	  width: 100%;
+	  border-collapse: collapse;
+	  text-align: left;
+	  font-size: 0.95rem;
+	}
+
+	.modern-table th, 
+	.modern-table td {
+	  padding: 1rem 1.5rem;
+	}
+
+	/* Responsive Mobile Layout (Viewport under 768px) */
+	@media (max-width: 768px) {
+	  /* Force the table to not behave like a table anymore */
+	  .modern-table, 
+	  .modern-table thead, 
+	  .modern-table tbody, 
+	  .modern-table th, 
+	  .modern-table td, 
+	  .modern-table tr { 
+		display: block; 
+	  }
+	  
+	  /* Hide table headers completely for mobile views */
+	  .modern-table thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	  }
+	  
+	  /* Turn each row into a distinct, separate card structure */
+	  .modern-table tr { 
+		margin-bottom: 1.5rem;
+		border-radius: var(--radius);
+		padding: 0.5rem;
+		box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+	  }
+	  
+	  /* Transform cells to align side-by-side like rows inside the card */
+	  .modern-table td { 
+		border: none;
+		position: relative;
+		padding-left: 50% !important; /* Push text to the right side */
+		text-align: right;
+	  }
+	  
+	  /* Inject the descriptive label on the left side of the mobile row */
+	  .modern-table td:before { 
+		content: attr(data-label); /* Pulls from HTML 'data-label' */
+		position: absolute;
+		left: 1.5rem;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+		text-align: left;
+		font-weight: 700;
+		color: var(--bg-dark);
+	  }
+	}
+
+	/* ==========================================================
+	   THE 3 DESIGN VARIATIONS (Choose by changing the class name)
+	   ========================================================== */
+
+	/* STYLE 1: Clean & Minimal (Clean lines, light grey alternates) */
+	.modern-table.variant-minimal {
+	  background: var(--surface);
+	}
+	.modern-table.variant-minimal th {
+	  background-color: #f8fafc;
+	  color: var(--bg-dark);
+	  font-weight: 600;
+	  border-bottom: 2px solid #e2e8f0;
+	}
+	.modern-table.variant-minimal td {
+	  border-bottom: 1px solid #e2e8f0;
+	}
+	.modern-table.variant-minimal tbody tr:nth-child(even) {
+	  background-color: #f8fafc;
+	}
+	@media (max-width: 768px) {
+	  .modern-table.variant-minimal tr { background: var(--surface); border: 1px solid #e2e8f0; }
+	  .modern-table.variant-minimal td { border-bottom: 1px solid #f1f5f9; }
+	}
+
+	/* STYLE 2: Frosted Glass / Modern SaaS (Sleek translucent look) */
+	.modern-table.variant-glass {
+	  background: rgba(255, 255, 255, 0.7);
+	  backdrop-filter: blur(8px);
+	  border: 1px solid rgba(255, 255, 255, 0.4);
+	}
+	.modern-table.variant-glass th {
+	  color: var(--primary);
+	  font-weight: 700;
+	  text-transform: uppercase;
+	  font-size: 0.8rem;
+	  letter-spacing: 0.05em;
+	  border-bottom: 1px solid rgba(37, 99, 235, 0.1);
+	}
+	.modern-table.variant-glass td {
+	  border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+	}
+	.modern-table.variant-glass tbody tr:hover {
+	  background-color: rgba(37, 99, 235, 0.03);
+	}
+	@media (max-width: 768px) {
+	  .modern-table.variant-glass tr { background: rgba(255, 255, 255, 0.8); border: 1px solid rgba(255, 255, 255, 0.6); }
+	}
+
+	/* STYLE 3: Bold Header (Deep contrast anchor) */
+	.modern-table.variant-bold {
+	  background: var(--surface);
+	  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+	}
+	.modern-table.variant-bold th {
+	  background-color: var(--bg-dark);
+	  color: var(--text-light);
+	  font-weight: 500;
+	}
+	.modern-table.variant-bold td {
+	  border-bottom: 1px solid #f1f5f9;
+	}
+	.modern-table.variant-bold tbody tr:hover {
+	  background-color: #fdfdfd;
+	  color: var(--primary);
+	}
+	@media (max-width: 768px) {
+	  .modern-table.variant-bold tr { background: var(--surface); border-left: 4px solid var(--primary); }
+	}
+
+  /* 1. Hide the radio buttons completely */
+  input[type="radio"] {
+    display: none;
+  }
+
+  /* 2. Show everything by default when "All" is selected */
+  #filter-all:checked ~ table tr {
+    display: table-row;
+  }
+
+  /* 3. Hide all rows first, then only show matching rows when a specific radio is checked */
+  #filter-aws:checked ~ table tr:not(.aws),
+  #filter-agile:checked ~ table tr:not(.agile),
+  #filter-azure:checked ~ table tr:not(.azure),
+  #filter-itil:checked ~ table tr:not(.itil),
+  #filter-oracle:checked ~ table tr:not(.oracle),
+  #filter-others:checked ~ table tr:not(.others) {
+    display: none;
+  }
+ 
+   /* --- Simple CSS Styling for the Dropdown Look --- */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    padding: 10px;
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  label {
+    display: block;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  label:hover { background-color: #ddd; }
+ 
+</style>
+
+
+  <h3>Filter Table by Category</h3>
+
+  <!-- The Radio Buttons (Must be BEFORE the table in the HTML structure) -->
+  <input type="radio" id="filter-all" name="category-filter" checked></input>
+  <input type="radio" id="filter-aws" name="category-filter"></input>
+  <input type="radio" id="filter-agile" name="category-filter"></input>
+  <input type="radio" id="filter-azure" name="category-filter"></input>
+  <input type="radio" id="filter-itil" name="category-filter"></input>
+  <input type="radio" id="filter-oracle" name="category-filter"></input>
+
+  <!-- Fake Dropdown Menu -->
+  <div class="dropdown">
+    <button>Select Category ▼</button>
+    <div class="dropdown-content">
+      <label for="filter-all">All</label>
+      <label for="filter-aws">AWS</label>
+      <label for="filter-agile">AGILE</label>
+      <label for="filter-azure">AZURE</label>
+	  <label for="filter-itil">ITIL</label>
+	  <label for="filter-oracle">ORACLE</label>
+    </div>
+  </div>
+
+  <!-- The Data Table -->
+  <table  class="modern-table variant-glass">
+      <thead>
+		 <tr>
+		   <th><b>Organization</b></th>
+		   <th><b>Batch</b></th>
+		   <th><b>Certification</b></th>
+		   <th><b>Year</b></th>
+		 </tr>
+      </thead>
+
+
+ <tr class="azure">
+ <td>
+  <img class="img-fluid" src="https://images.credly.com/size/680x680/images/02faaa2c-3967-467a-b015-c0747b880faf/blob" alt="" width="50" height="50">
+
+ </td>
+ <td><b>AZURE</b></td>
+ <td><b>  <A href="https://www.credly.com/org/microsoft-certification/badge/microsoft-certified-azure-fundamentals.1" TARGET="_blank">Microsoft Certified: Azure Fundamentals</A>
+ </b></td>
+ <td>
+  <h4>November 2016</h4>
+ </td>
+ </tr>
+
+ <tr class="itil">
+ <td>
+  <img class="img-fluid" src="https://images.credly.com/size/680x680/images/6c9b2a4b-91d5-4093-919a-7eb81cfe74ba/ITIL_Foundation.png" alt="" width="50" height="50">
+
+ </td>
+ <td><b>ITIL</b></td>
+ <td><b>  <A href="https://www.credly.com/org/peoplecert/badge/itil-foundation" TARGET="_blank">ITIL Foundation</A>
+ </b></td>
+ <td>
+  <h4>November 2016</h4>
+ </td>
+ </tr>
+ 
+ <tr class="aws">
+ <td>
+  <img class="img-fluid" src="https://images.credly.com/size/680x680/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png" alt="" width="50" height="50">
+
+ </td>
+ <td><b>AWS</b></td>
+ <td><b>  <A href="https://www.credly.com/badges/a10edf62-95f0-4373-8861-8e0360c9ff8a/linked_in_profile" TARGET="_blank">AWS Certified Solutions Architect – Associate</A>
+ </b></td>
+ <td>
+  <h4>July 2022</h4>
+ </td>
+ </tr>
+ 
+ <tr class="aws">
+ <td>
+  <img class="img-fluid" src="https://images.credly.com/size/680x680/images/b9feab85-1a43-4f6c-99a5-631b88d5461b/image.png" alt="" width="50" height="50">
+
+ </td>
+ <td><b>AWS</b></td>
+ <td><b>  <A href="https://www.credly.com/badges/f5abd108-b5ee-4f68-bbbf-5f9b254d36e5/linked_in_profile" TARGET="_blank">AWS Certified Developer – Associate</A>
+ </b></td>
+ <td>
+  <h4>October 2022</h4>
+ </td>
+ </tr>
+ 
+ <tr class="aws">
+ <td>
+  <img class="img-fluid" src="https://images.credly.com/size/680x680/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png" alt="" width="50" height="50">
+
+ </td>
+ <td><b>AWS</b></td>
+ <td><b>  <A href="https://www.credly.com/badges/be06db23-74de-47a7-beca-7cd8871f76ce/linked_in_profile" TARGET="_blank">AWS Certified Cloud Practitioner</A>
+ </b></td>
+ <td>
+  <h4>June 2021</h4>
+ </td>
+ </tr>
+
+ <tr class="aws">
+ <td>
+  <img class="img-fluid" src="https://images.credly.com/size/680x680/images/8f006312-3154-45bf-a845-4a043641e83c/blob" alt="" width="50" height="50">
+
+ </td>
+ <td><b>AWS</b></td>
+ <td><b>  <A href="https://www.credly.com/badges/0494ddef-5a24-4d8b-a177-22cb453fab0c/linked_in_profile" TARGET="_blank">AWS Partner: Accreditation (Technical)</A>
+ </b></td>
+ <td>
+  <h4>June 2022</h4>
+ </td>
+ </tr>
+
+ <tr class="agile">
+ <td>
+  <img class="img-fluid" src="https://images.credly.com/size/680x680/images/d9ac827f-2f5a-4017-8336-f9fab4e6881b/cert_mark_SSM_badge.png" alt="" width="50" height="50">
+
+ </td>
+ <td><b>AGILE</b></td>
+ <td><b>  <A href="https://www.credly.com/badges/dfbb26e2-3591-4d37-b421-ac62f8b30e95/linked_in_profile" TARGET="_blank">Certified SAFe® 4 Scrum Master</A>
+ </b></td>
+ <td>
+  <h4>October 2020</h4>
+ </td>
+ </tr>
+ 
+ <tr class="agile">
+ <td>
+  <img class="img-fluid" src="https://images.credly.com/size/680x680/images/8520da4f-b343-41f7-9b0a-f032dccaa113/sa_badge.png" alt="" width="50" height="50">
+
+ </td>
+ <td><b>AGILE</b></td>
+ <td><b>  <A href="https://www.credly.com/badges/f313f13d-6525-44a2-beb0-c18e57c46483/linked_in_profile" TARGET="_blank">Certified SAFe® 4 Agilist</A>
+ </b></td>
+ <td>
+  <h4>October 2020</h4>
+ </td>
+ </tr>
+ 
+ <tr class="agile">
+ <td>
+  <img class="img-fluid" src="https://mbajamr.com/img/SMC.webp" alt="" width="50" height="50">
+
+ </td>
+<td><b>AGILE</b></td>
+ <td><b>  <A href="" TARGET="_blank">Scrum Master Certified</A>
+ </b></td>
+ <td>
+  <h4>May 2017</h4>
+ </td>
+ </tr>
+
+ <tr class="agile">
+ <td>
+  <img class="img-fluid" src="https://mbajamr.com/img/SMF.png" alt="" width="50" height="50">
+
+ </td>
+ <td><b>AGILE</b></td>
+ <td><b>  <A href="" TARGET="_blank">Scrum Fundamentals Certified</A>
+ </b></td>
+ <td>
+  <h4>November 2016</h4>
+ </td>
+ </tr>
+
+ <tr class="oracle">
+ <td>
+  <img class="img-fluid" src="https://images.credly.com/size/680x680/images/db3d8b5c-8ecc-429f-8f40-c1706b98d729/Oracle-Certification-badge_OC-Specialist.png" alt="" width="50" height="50">
+
+ </td>
+ <td><b>ORACLE</b></td>
+ <td><b>  <A href="https://www.credly.com/badges/0402f59c-7b4f-4552-aa2e-7631361bc596/linked_in_profile" TARGET="_blank">Oracle Autonomous Database Cloud 2019 Certified Specialist</A>
+ </b></td>
+ <td>
+  <h4>July 2020</h4>
+ </td>
+ </tr>
+ 
+ <tr class="oracle">
+ <td>
+  <img class="img-fluid" src="https://images.credly.com/size/680x680/images/a0c90a95-7b12-4b51-a8a5-59887be2c399/08_Associate_OCI_Architect_2019.png" alt="" width="50" height="50">
+
+ </td>
+ <td><b>ORACLE</b></td>
+ <td><b>  <A href="https://www.credly.com/badges/09c13b15-86b8-45a9-9b36-09b93a7af5a1/linked_in_profile" TARGET="_blank">Oracle Cloud Infrastructure 2019 Certified Architect Associate</A>
+ </b></td>
+ <td>
+  <h4>August 2020</h4>
+ </td>
+ </tr>
+
+ <tr class="oracle">
+ <td>
+  <img class="img-fluid" src="https://images.credly.com/size/680x680/images/501ca080-9df7-4f25-9a22-567e91142d12/09_Associate_OCI_Cloud_Operations_2019.png" alt="" width="50" height="50">
+
+ </td>
+ <td><b>ORACLE</b></td>
+ <td><b>  <A href="https://www.credly.com/badges/2961578e-0457-4296-8501-f6236c20cb27/linked_in_profile" TARGET="_blank">Oracle Cloud Infrastructure 2019 Cloud Operations Certified Associate</A>
+ </b></td>
+ <td>
+  <h4>July 2020</h4>
+ </td>
+ </tr>
+
+ <tr class="oracle">
+ <td>
+  <img class="img-fluid" src="https://images.credly.com/size/680x680/images/cb669fe1-4b2a-4a6a-8cbd-3a32edde71b6/03_Oracle-Cloud_Infrastructure_Developer_Associate.png" alt="" width="50" height="50">
+
+ </td>
+ <td><b>ORACLE</b></td>
+ <td><b>  <A href="https://www.credly.com/badges/3a7cd4d9-f411-4279-954e-e520e343782a/linked_in_profile" TARGET="_blank">Oracle Cloud Infrastructure Developer 2020 Certified Associate</A>
+ </b></td>
+ <td>
+  <h4>August 2020</h4>
+ </td>
+ </tr>
+
+ <tr class="oracle">
+ <td>
+  <img class="img-fluid" src="https://images.credly.com/size/680x680/images/fee3489e-d46b-48e9-a92b-a5f8569d8ee6/Oracle-Certification-badge_OC-Specialist600X600.png" alt="" width="50" height="50">
+
+ </td>
+ <td><b>ORACLE</b></td>
+ <td><b>  <A href="https://www.credly.com/badges/46449718-777b-4fae-bdd6-316984d60fcc/linked_in_profile" TARGET="_blank">Oracle Pricing Cloud 2018 Certified Implementation Specialist</A>
+ </b></td>
+ <td>
+  <h4>June 2020</h4>
+ </td>
+ </tr>
+
+ <tr class="oracle">
+ <td>
+  <img class="img-fluid" src="https://images.credly.com/size/680x680/images/9b8bb298-3842-4cbd-8566-9c236d804971/01_Oracle-Cloud_Infrastructure_Architect_Associate.png" alt="" width="50" height="50">
+
+ </td>
+ <td><b>ORACLE</b></td>
+ <td><b>  <A href="https://www.credly.com/badges/5cfbf88a-08fc-4c0e-9980-f870e63717ba/linked_in_profile" TARGET="_blank">Oracle Cloud Infrastructure 2020 Certified Architect Associate</A>
+ </b></td>
+ <td>
+  <h4>June 2020</h4>
+ </td>
+ </tr>
+
+
+ <tr class="oracle">
+ <td>
+  <img class="img-fluid" src="https://images.credly.com/size/680x680/images/577dd440-6ffa-41ad-9f07-9f6ba6e439f0/06_OCI_Architect_Professional.png" alt="" width="50" height="50">
+
+ </td>
+ <td><b>ORACLE</b></td>
+ <td><b>  <A href="https://www.credly.com/badges/5daa4c39-7abd-40dc-a8e0-31beebe95d40/linked_in_profile" TARGET="_blank">Oracle Cloud Infrastructure 2020 Certified Architect Professional</A>
+ </b></td>
+ <td>
+  <h4>June 2020</h4>
+ </td>
+ </tr>
+
+ <tr class="oracle">
+ <td>
+  <img class="img-fluid" src="https://images.credly.com/size/680x680/images/d82983bb-b3a3-4e48-a7c6-bb4501818e7b/02_Oracle-Cloud_Infrastructure_Cloud_Operations_Associate.png" alt="" width="50" height="50">
+
+ </td>
+ <td><b>ORACLE</b></td>
+ <td><b>  <A href="https://www.credly.com/badges/c919f375-1e9a-4bf5-add7-9fed2f3842cf/linked_in_profile" TARGET="_blank">Oracle Cloud Infrastructure 2020 Certified Cloud Operations Associate</A>
+ </b></td>
+ <td>
+  <h4>June 2020</h4>
+ </td>
+ </tr>
+
+ <tr class="oracle">
+ <td>
+  <img class="img-fluid" src="https://images.credly.com/size/680x680/images/697cf123-74b0-4356-9055-9973471d26d6/03_Oracle_Cloud_Infrastructure_Foundations_Associate.png" alt="" width="50" height="50">
+
+ </td>
+ <td><b>ORACLE</b></td>
+ <td><b>  <A href="https://www.credly.com/badges/fc6588ed-23e8-4a1a-8ac5-74669a138e17/linked_in_profile" TARGET="_blank">Oracle Cloud Infrastructure Foundations 2020 Certified Associate</A>
+ </b></td>
+ <td>
+  <h4>June 2020</h4>
+ </td>
+ </tr>
+
+ <tr class="oracle">
+ <td>
+  <img class="img-fluid" src="https://images.credly.com/size/680x680/images/13a2043a-12e9-4e5d-aed0-6083534b84fe/07_SQL_Associate__1_.png" alt="" width="50" height="50">
+
+ </td>
+ <td><b>ORACLE</b></td>
+ <td><b>  <A href="https://www.credly.com/badges/bd297703-51cc-479d-9d18-1462a9fe7a7c/linked_in_profile" TARGET="_blank">Oracle Database SQL Certified Associate</A>
+ </b></td>
+ <td>
+  <h4>July 2020</h4>
+ </td>
+ </tr>
+
+ <tr class="oracle">
+ <td>
+  <img class="img-fluid" src="https://images.credly.com/size/680x680/images/54b9f2aa-5790-4a81-832d-a958aa624ec5/OPN-Sales_Specialist_Oracle-Supply-Chain-Management-Cloud_Badge_600x600.png" alt="" width="50" height="50">
+
+ </td>
+ <td><b>ORACLE</b></td>
+ <td><b>  <A href="https://www.credly.com/badges/8fed0b7a-8a54-4c07-84e7-461660ec82dd/linked_in_profile" TARGET="_blank">Oracle Supply Chain Management Cloud Sales Specialist</A>
+ </b></td>
+ <td>
+  <h4>November 2020</h4>
+ </td>
+ </tr>
+  </table>
+  
+</body>
+
+
