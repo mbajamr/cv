@@ -1,35 +1,58 @@
-        /* 3. MASTER WRAPPER TARGET GROUPS */
-        .tab-group {
-            display: none; 
-			z-index: 1;
+	/* 3. MASTER WRAPPER TARGET GROUPS */
+	.tab-group, .EP-group-menu {
+		display: none; 
+		z-index: 1;
+	}
 
-        }
+	/* Default */
+	body:not(:has(.tab-group:target)) #Base-group { 
+		display: grid; 
+	}
 
-		/* Default */
-		body:not(:has(.tab-group:target)) #Base-group { 
-			display: grid; 
+	/* Show the active target group element matching layout clicks */
+	.tab-group:target {
+		display: grid;
+	}
+
+	.tab-group2 {
+		display: grid; 
+		z-index: 2;
+	}
+
+	body:not(:has(.tab-group:target)) .EP-group-menu { 
+		display: grid; 
+	}
+	
+	/* When the trigger is targeted, display Section 2 as well */
+	body:has(#EP-group:target) .EP-group-menu {
+		display: grid;
+	}
+
+	/* Show the active target group element matching layout clicks */
+	.tab-group2:target {
+		display: grid;
+		position: absolute;
+		display: inline-block;
+		top: 30%;
+		left: 21%;
+		z-index: 20000;
+	}
+
+	iframe {
+		width: 100%;   /* Fill the entire column width naturally */
+		border: none;  /* Remove the ugly default sub-block border */
+		overflow: hidden; /* Hide internal scrollbars completely */
+		
+		/* Give it a flexible base so your container styling applies nicely */
+		background: transparent; 
+		min-height: 700px;    /* 3. Ensures it is tall enough so text never overflows */
+
+	}
+
+
+	/* MOBILE RESPONSIVE STACK ADJUSTMENT */
+	@media (max-width: 768px) {
+		.tab-group, body:not(:has(.tab-group:target)) #home-group {
+			flex-direction: column;
 		}
-
-        /* Show the active target group element matching layout clicks */
-        .tab-group:target {
-            display: grid;
-        }
-
-		iframe {
-			width: 100%;   /* Fill the entire column width naturally */
-			border: none;  /* Remove the ugly default sub-block border */
-			overflow: hidden; /* Hide internal scrollbars completely */
-			
-			/* Give it a flexible base so your container styling applies nicely */
-			background: transparent; 
-			min-height: 700px;    /* 3. Ensures it is tall enough so text never overflows */
-
-		}
-
-
-        /* MOBILE RESPONSIVE STACK ADJUSTMENT */
-        @media (max-width: 768px) {
-            .tab-group, body:not(:has(.tab-group:target)) #home-group {
-                flex-direction: column;
-            }
-		}
+	}

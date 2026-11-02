@@ -6,169 +6,138 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     
 </head>
-<link rel="stylesheet" href="css/root.css">
+<link rel="stylesheet" href="./css/root.css">
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="css/global.css">
 <link rel="stylesheet" href="css/dropdown.css">
+<link rel="stylesheet" href="css/menusvg.css">
+<link rel="stylesheet" href="css/footer.css">
+<link rel="stylesheet" href="css/table.css">
+<link rel="stylesheet" href="css/menudet.css">
+<link rel="stylesheet" href="css/footer.css">
+<link rel="stylesheet" href="css/widget.css">
 
 <body>
 
     <div class="bodyBase">
-
+        
         <!-- Header Section -->
-<!--
         <header id="headerMain">
--->
-			<!-- Header Section -->
-			<!--
+            
+			<!-- Header Section 
 			<div class="header-col-1">MBAjamr</div>
-            <div class="header-col-2">Joel Martinez</div>		
-
-			<div valign="top" id="SubMenu" class="container-xxl bg-primary"></div>
-			<div valign="top" id="SubMenu" class="container-xxl bg-primary"><iframe src="Base/SubMenu.html" scrolling="yes" style="width: 100%; border: none;"></iframe></div>
+            <div class="header-col-2">Joel Martinez</div>
 			-->
-<!--
-			<nav>
-			  <ul>
-				<div>
-				  <img class="img-fluid" src="img/profile.svg" alt="">
-				</div>
-			  </ul>
-			</nav>
+			<div valign="top" id="SubMenu" class="container-xxl bg-primary"></div>
+			<div class="header-col-2">
+				<h1 class="headerMain">Joel Martinez</h1>
+			</div>
+            <div class="header3">
+			<div class="dropdown">
+                 <a href="#" class="nav-link">Menu ▾</a>
+				<nav class="dropdown-menu">
+                   
+                    <div id="HeaderMenu"></div>
 
-			
-			<h1 class="Header">Joel Martinez</h1>
--->
-				<!-- MASTER DROPDOWN CONTAINER WRAPPER ELEMENT -->
-<!--
-				<div class="dropdown">
-					<a href="#" class="nav-link">Menu ▾</a>
-					<nav class="dropdown-menu">
-						<a class="nav-link" href="#Base-group">Profile</a>
-						<a class="nav-link" href="#EP-group">Professional Experience</a>
-						<a class="nav-link" href="#Ed-group">Education</a>
-						<a class="nav-link" href="#Sk-group">Skills</a>
-						<a class="nav-link" href="#Crt-group">Certifications</a>
-						<a class="nav-link" href="#Prj-group">Relevant Projects</a>
-					</nav>
-				</div>
+                </nav>
+            </div>
+			</div>
         </header>
+
+<!--
+<div id="header3">
+    <nav class="nav-links-inline">
+        <a href="#inicio" class="nav-inline-item">Inicio</a>
+        <a href="#dashboard" class="nav-inline-item">Panel</a>
+        <a href="#config" class="nav-inline-item">Configuración</a>
+    </nav>
+</div>
 -->
 
-				<!-- MASTER DROPDOWN CONTAINER WRAPPER ELEMENT -->
-				<div class="dropdown">
-					<a href="#" class="nav-link">Menu ▾</a>
-					<nav class="dropdown-menu">
-						<a class="nav-link" target="_top" href="#Base-group">Profile</a>
-						<a class="nav-link" target="_top" href="#EP-group">Professional Experience</a>
-						<a class="nav-link" target="_top" href="#Ed-group">Education</a>
-						<a class="nav-link" target="_top" href="#Sk-group">Skills</a>
-						<a class="nav-link" target="_top" href="#Crt-group">Certifications</a>
-						<a class="nav-link" target="_top" href="#Prj-group">Relevant Projects</a>
-					</nav>
+
+        <!-- Main Body Grid Content Elements (AJAX targets) -->
+        <main class="row0">
+
+			<!-- Target container 1 -->
+            <section id="contentSection1" class="card-custom row1 h300">
+                <!-- Your AJAX script will target '#contentSection1' and inject internal code here -->
+				<div valign="top" id="Menu" class="container-xxl bg-primary"></div>
+            </section>
+            
+            <!-- Target container 2 -->
+            <section id="contentSection2" class="card-custom row2 h300">
+                <!-- Your AJAX script will target '#contentSection2' and inject internal code here -->
+				<div class="Principal" id="Principal"></div>
+            </section>
+					
+        </main>
+
+		<!-- Target container 3 -->
+		<section id="contentSection3" class="card-custom row4 h600" style="display: none;">
+			<!-- Your AJAX script will target '#contentSection2' and inject internal code here   -->
+			<div class="Principal" id="PrincipalWide"></div>
+		</section>
+
+    <!-- HTML WIDGET CODE -->
+    <div id="custom-chat-widget">
+        <div class="chat-window">
+			<!-- Locate this area in your index.php and update it with the ID -->
+			<div class="chat-header">
+				<div style="font-size:20px;">🤖</div>
+				<div>
+					<h4 style="margin:0;">Live Support</h4>
+					<span id="chat-header-status" style="font-size:12px; opacity:0.8;">Online</span>
 				</div>
+			</div>
 
-	<div id="Base-group" class="tab-group">
-		<!-- Main Body Grid Content Elements (AJAX targets) -->
+            <div class="chat-messages" id="chat-messages-container">
+                <div class="message inbound">Hello! Type a message below to test our local database connection.</div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" id="chat-user-input" placeholder="Type a message..." autocomplete="off">
+                <button id="chat-send-btn">Send</button>
+            </div>
+        </div>
+        <div class="chat-bubble" id="chat-toggle-bubble">
+            <svg viewBox="0 0 24 24" id="chat-icon-svg">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+        </div>
+    </div>
+			
+        <!-- Footer Section -->
+        <footer id="Footer">
+			<div id="Footer">
+        </footer>
 
-		<main class="row0">
-			<!-- Target container 0 -->
-			<section id="contentSection0" class="headerMain h200" style="width: 100%; height:150px; border: none;">
-				<iframe src="section/Header.html" scrolling="no" style="width: 100%; h200 border: none;"></iframe>
-			</section>
-			<!-- Target container 1 -->
-			<section id="contentSection1" class="card-custom row1 h700">
-				<img src="img/jamr.png" style="object-fit: cover;">
-			</section>
-			<!-- Target container 2 -->
-			<section id="contentSection2" class="card-custom row2 h700">
-				<iframe src="Base/Main.html" scrolling="no" style="width: 100%; border: none;"></iframe>
-			</section>
-		</main>
-	</div>
-	
-	<div id="EP-group" class="tab-group">		
-		<main class="row0">
-			<!-- Target container 0 -->
-			<section id="contentSection0" class="headerMain h200" style="width: 100%; height:150px; border: none;">
-				<iframe src="section/Header.html" scrolling="no" style="width: 100%; h200 border: none;"></iframe>
-			</section>
-			<!-- Target container 1 -->
-			<section class="card-custom row1 h700" name="EP-group1">
-				<iframe src="EP/Menu.html" scrolling="yes" style="width: 100%; border: none;"></iframe>
-			</section>
-			<!-- Target container 2 -->
-			<section class="card-custom row2 h700">
-				<iframe src="EP/AFinancial.html" name="EP-group2" scrolling="yes" style="width: 100%; border: none;"></iframe>
-			</section>
-		</main>
-	</div>
-
-	<div id="Ed-group" class="tab-group">		
-			<!-- Target container 0 -->
-			<section id="contentSection0" class="headerMain h200" style="width: 100%; height:200px; border: none;">
-				<iframe src="section/Header.html" scrolling="no" style="width: 100%; h200 border: none;"></iframe>
-			</section>
-		<main class="row2">
-
-			<!-- Target container 3 -->
-			<section class="card-custom row2 h700">
-				<iframe src="Ed/Main.html" scrolling="yes" style="width: 100%; border: none;"></iframe>
-			</section>
-		</main>
-	</div>
-
-	<div id="Sk-group" class="tab-group">		
-		<main class="row2">
-			<!-- Target container 0 -->
-			<section id="contentSection0" class="headerMain h200" style="width: 100%; height:200px; border: none;">
-				<iframe src="section/Header.html" scrolling="no" style="width: 100%; h200 border: none;"></iframe>
-			</section>
-			<!-- Target container 3 -->
-			<section class="Principal">
-				<iframe src="Sk/Main.html" class="card-custom row2 h3800" scrolling="yes" style="height:3800px; width:100%; border: none;"></iframe>
-			</section>
-		</main>
-	</div>
-
-	<div id="Crt-group" class="tab-group">		
-			<!-- Target container 0 -->
-			<section id="contentSection0" class="headerMain h200" style="width: 100%; height:200px; border: none;">
-				<iframe src="section/Header.html" scrolling="no" style="width: 100%; h200 border: none;"></iframe>
-			</section>
-		<main class="row2">
-			<!-- Target container 3 -->
-			<section class="Principal">
-				<iframe src="Cert/Main.html"class="card-custom row2 " scrolling="yes" style="height:2000px; width: 100%; border: none;"></iframe>
-			</section>
-		</main>
-	</div>
-
-	<div id="Prj-group" class="tab-group">		
-		<main class="row0">
-			<!-- Target container 0 -->
-			<section id="contentSection0" class="headerMain h200" style="width: 100%; height:200px; border: none;">
-				<iframe src="section/Header.html" scrolling="no" style="width: 100%; h200 border: none;"></iframe>
-			</section>
-			<!-- Target container 1 -->
-			<section class="card-custom row1 h700" name="Prj-group1">
-				<iframe class="row1" src="Prj/Menu.html" scrolling="yes" style="width: 100%; border: none;"></iframe>
-			</section>
-			<!-- Target container 2 -->
-			<section class="card-custom row2 h700">
-				<iframe  class="row5" src="Prj/AGILE.html" name="Prj-group2" scrolling="yes" style="width: 100%; border: none;"></iframe>
-			</section>
-		</main>
-	</div>
-
-	<!-- Footer Section -->
-	<footer id="Footer">
-		<div id="Footer1"></div>
-	</footer>
-
-	<section id="contentSection9" class="headerMain h200" style="width: 100%; height:150px; border: none;">
-		<iframe src="section/Footer1.html" scrolling="no" style="width: 100%; h200 border: none;"></iframe>
-	</section>
     </div>
 
 </body>
+
+<!-- Template Javascript -->
+<script src="js/main.js"></script>
+<script src="js/expand.js"></script>
+<script src="js/widget.js"></script>
+
+<script type="text/javascript">
+//<![CDATA[
+//loadHTML('Header.html','header3');
+loadHTML('HeaderMenu.html','HeaderMenu');
+loadHTML('Base/Menu.html','Menu');
+loadHTML('Base/SubMenu.html','SubMenu');
+loadHTML('Base/Main.html','Principal');
+loadHTML('Footer/Footer.html','Footer');
+loadHTML('widget/widget.html','Widget');
+//loadHTML('Footer5.html','Footer5');
+//loadHTML('Cert/Main.html','PrincipalWide');
+//setupSectionCatSel();
+//initTable();
+//setupSection();
+//filterCerts('All');
+//displayCerts();
+//setupSectionDisplay();
+//]]>
+// Call the function to load content from text file
+//loadContentFromTextFile('content.txt');
+</script>
+

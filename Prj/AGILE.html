@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relevant Projects</title>
 
     <style>
         * {
@@ -13,7 +14,7 @@
             margin: 0;
             padding: 40px 20px;
             font-family: Arial, Helvetica, sans-serif;
-
+            background: #f5f7fa;
             color: #1f2937;
         }
 
@@ -71,7 +72,7 @@
             margin-left: 15px;
         }
 
-        .subcontent {
+        .content {
             display: none;
             padding: 0 20px 20px 20px;
             color: #4b5563;
@@ -101,117 +102,52 @@
                 font-size: 15px;
             }
         }
-
-        /* 2. ACCORDION STYLES */
-        details {
-            background-color: #ffffff;
-            margin-bottom: 15px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            overflow: hidden;
-            border: 1px solid #e2e8f0;
-            transition: box-shadow 0.3s ease;
-        }
-
-        /* Changes look when open */
-        details[open] {
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-            border-color: #007bff;
-        }
-
-        /* The clickable button header */
-        summary {
-            padding: 20px;
-            font-size: 1.25rem;
-            font-weight: 600;
-            cursor: pointer;
-            list-style: none; /* Hides default browser arrow */
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            user-select: none;
-            background-color: #ffffff;
-            color: #2d3748;
-        }
-
-        /* Custom indicator icon using CSS pseudo-elements */
-        summary::after {
-            content: "+";
-            font-size: 1.5rem;
-            font-weight: 300;
-            color: #007bff;
-            transition: transform 0.2s ease;
-        }
-
-        /* Rotate indicator icon when opened */
-        details[open] summary::after {
-            content: "−";
-            transform: rotate(180deg);
-        }
-
-        summary:hover {
-            background-color: #f8fafc;
-        }
-
-        /* Smooth reveal animation */
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-5px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Simple flex list for features */
-        .feature-list {
-            margin: 15px 0;
-            padding-left: 20px;
-        }
-        
-        .feature-list li {
-            margin-bottom: 8px;
-        }
-
-
     </style>
 </head>
 
 <body>
 
-    <div class="container">
-        
-        <div class="page-header">
-            <h1>Project: Agile Delivery & Data Modernization</h1>
-            <p>Click any section header below to instantly expand or collapse details.</p>
+<div class="container">
+
+    <h1>Project: Agile Delivery & Data Modernization</h1>
+
+    <!-- 1 -->
+    <div class="item">
+        <div class="item-header" onclick="toggleItem(this)">
+            <div class="title">1. Challenge</div>
+            <button class="toggle" aria-label="Expand">+</button>
         </div>
 
-        <!-- SECTION 1: CORE FEATURES -->
-        <details> <!-- Added "open" attribute so the first one defaults to unhidden -->
-            <summary>1. Challenge</summary>
-			<div class="content">
+        <div class="content">           
 Banking and insurance technology initiatives required coordinated delivery across multidisciplinary teams, legacy systems, and highly restricted enterprise environments. Inconsistent delivery practices, complex dependencies, compressed timelines, and strict contractual and financial constraints created challenges for predictable execution and modernization.
 In parallel, data integration initiatives needed to support the transition from legacy data management platforms toward cloud-based environments while maintaining stringent security, access, governance, and compliance controls.
+        </div>
+    </div>
 
-			</div>
-        </details>
+    <!-- 2 -->
+    <div class="item">
+        <div class="item-header" onclick="toggleItem(this)">
+            <div class="title">2. Objectives</div>
+            <button class="toggle" aria-label="Expand">+</button>
+        </div>
 
-        <details>
-            <summary>2. Objectives</summary>
-			<div class="content">
+        <div class="content">
 Establish consistent Agile delivery practices across multiple technology initiatives and multidisciplinary teams.
 Improve delivery predictability, visibility into scope, dependencies, resources, and commitments.
 Strengthen coordination between development, testing, and production deployment activities.
 Support data integration and modernization from legacy platforms to cloud-based environments.
 Accelerate delivery while maintaining quality, security, compliance, and financial discipline.
-			</div>
-        </details>
+        </div>
+    </div>
 
-        <details>
-            <summary>3. Actions</summary>
-			<div class="content">
+    <!-- 3 -->
+    <div class="item">
+        <div class="item-header" onclick="toggleItem(this)">
+            <div class="title">3. Actions</div>
+            <button class="toggle" aria-label="Expand">+</button>
+        </div>
+
+        <div class="content">
 Introduced and applied Agile practices across multiple technology programs, establishing a consistent two-week delivery cadence.
 Applied Scrum practices to improve sprint planning, prioritization, progress tracking, and coordination across multidisciplinary teams.
 Combined Agile delivery with DevOps-oriented development and release processes to strengthen the transition from development through deployment.
@@ -219,42 +155,39 @@ Coordinated data integration and development activities across legacy and target
 Worked within strict banking and insurance security requirements, ensuring that technical changes and delivery processes respected established access controls and governance.
 Applied delivery governance and continuous improvement practices to manage dependencies, contractual commitments, compressed timelines, and financial constraints.
 Supported enterprise application development initiatives for the insurance sector alongside data integration and modernization work in restricted banking environments.
+        </div>
+    </div>
 
-			</div>
-        </details>
+    <!-- 4 -->
+    <div class="item">
+        <div class="item-header" onclick="toggleItem(this)">
+            <div class="title">4. Results</div>
+            <button class="toggle" aria-label="Expand">+</button>
+        </div>
 
-        <details>
-            <summary>4. Results</summary>
-			<div class="content">
+        <div class="content">
 Improved delivery consistency: Established a common two-week delivery cadence across multiple technology initiatives.
 Increased delivery visibility: Improved transparency into scope, dependencies, resource allocation, and delivery commitments.
 Strengthened development-to-production execution: Improved coordination between development and delivery activities through Agile and DevOps-oriented practices.
 Accelerated delivery improvement: Observed initial improvements within the first several sprints as teams adopted more consistent planning and release routines.
 Supported data modernization: Advanced integration activities required to transition from legacy data management environments toward cloud-based platforms.
 Maintained controlled delivery: Supported technology transformation within strict security, governance, contractual, and financial constraints.
-			</div>
-        </details>
+        </div>
+    </div>
 
-        <details>
-            <summary>5. Business Impact</summary>
-			<div class="content">
+    <!-- 5 -->
+    <div class="item">
+        <div class="item-header" onclick="toggleItem(this)">
+            <div class="title">5. Business Impact</div>
+            <button class="toggle" aria-label="Expand">+</button>
+        </div>
+
+        <div class="content">
 Combined Agile delivery transformation, DevOps practices, enterprise application development, and data modernization to improve the consistency and predictability of technology delivery across highly regulated financial-services environments. The work strengthened collaboration between development and delivery teams while supporting cloud adoption and modernization without compromising the security and governance requirements associated with sensitive enterprise information.
-			</div>
-        </details>
-
-
-
-
-
-
-
-
+        </div>
+    </div>
 
 </div>
 
 </body>
 </html>
-
-
-
-

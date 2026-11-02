@@ -1,83 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="../css/Base/accordion.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professional Profile</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f7fa;
+            color: #1f2937;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            color: #172033;
+            font-size: 28px;
+        }
+
+        .item {
+            background: #ffffff;
+            border: 1px solid #dfe4ea;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+        }
+
+        .item-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 20px;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .item-header:hover {
+            background: #f8fafc;
+        }
+
+        .title {
+            font-size: 17px;
+            font-weight: 600;
+            color: #1e3a5f;
+        }
+
+        .toggle {
+            width: 30px;
+            height: 30px;
+            border: 1px solid #1e3a5f;
+            border-radius: 50%;
+            background: white;
+            color: #1e3a5f;
+            font-size: 20px;
+            line-height: 26px;
+            text-align: center;
+            cursor: pointer;
+            flex-shrink: 0;
+            margin-left: 15px;
+        }
+
+        .content {
+            display: none;
+            padding: 0 20px 20px 20px;
+            color: #4b5563;
+            line-height: 1.65;
+            font-size: 15px;
+            border-top: 1px solid #eef1f4;
+        }
+
+        .item.open .content {
+            display: block;
+        }
+
+        .item.open .toggle {
+            font-size: 18px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 12px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .title {
+                font-size: 15px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <div class="container">
-        
-        <div class="page-header">
-            <h1>Professional Profile</h1>
-            <p>Click any section header below to instantly expand or collapse details.</p>
+<div class="container">
+
+    <h1>Professional Profile</h1>
+
+    <!-- 1 -->
+    <div class="item">
+        <div class="item-header" onclick="toggleItem(this)">
+            <div class="title">Technology Leadership</div>
+            <button class="toggle" aria-label="Expand">+</button>
         </div>
 
-        <!-- SECTION 1: CORE FEATURES -->
-        <details> <!-- Added "open" attribute so the first one defaults to unhidden -->
-            <summary>🚀 Technology Leadership</summary>
-			<div class="content">
-					Technology Transformation Leader with nearly 25 years of experience
-					leading complex enterprise initiatives at the intersection of business
-					strategy, technology, finance and organizational transformation.
-			</div>
-        </details>
+        <div class="content">
+            Technology Transformation Leader with nearly 25 years of experience
+            leading complex enterprise initiatives at the intersection of business
+            strategy, technology, finance and organizational transformation.
+        </div>
+    </div>
 
-        <details>
-            <summary>🚀 Enterprise &amp; Multinational Experience</summary>
-			<div class="content">
-				Experienced in operating at team, program and enterprise levels,
-				leading multinational technology initiatives across banking,
-				telecommunications, consumer products, healthcare and distribution.
-			</div>
-        </details>
+    <!-- 2 -->
+    <div class="item">
+        <div class="item-header" onclick="toggleItem(this)">
+            <div class="title">Enterprise &amp; Multinational Experience</div>
+            <button class="toggle" aria-label="Expand">+</button>
+        </div>
 
-        <details>
-            <summary>🚀 Strategic &amp; Organizational Leadership</summary>
-			<div class="content">
-				Proven ability to connect business strategy with technology execution,
-				align organizations around transformation priorities, manage financial
-				and workforce considerations, strengthen data governance and provide
-				executive decision support.
-			</div>
-        </details>
+        <div class="content">
+            Experienced in operating at team, program and enterprise levels,
+            leading multinational technology initiatives across banking,
+            telecommunications, consumer products, healthcare and distribution.
+        </div>
+    </div>
 
-        <details>
-            <summary>🚀 Technology &amp; Business Expertise</summary>
-			<div class="content">
-				MBA with extensive experience across end-to-end complex technological
-				environments, including data ecosystems, infrastructure, integration,
-				platforms, analytics and visualization, particularly within highly
-				secure and regulated environments. Brings the technical depth to
-				challenge assumptions and identify risks, combined with the business,
-				financial and organizational perspective required to lead large-scale
-				transformation.
-			</div>
-        </details>
+    <!-- 3 -->
+    <div class="item">
+        <div class="item-header" onclick="toggleItem(this)">
+            <div class="title">Strategic &amp; Organizational Leadership</div>
+            <button class="toggle" aria-label="Expand">+</button>
+        </div>
 
-        <details>
-            <summary>🚀 English Proficiency</summary>
-			<div class="content">
-				Advanced English proficiency (TOEFL: 584).
-			</div>
-        </details>
+        <div class="content">
+            Proven ability to connect business strategy with technology execution,
+            align organizations around transformation priorities, manage financial
+            and workforce considerations, strengthen data governance and provide
+            executive decision support.
+        </div>
+    </div>
 
-        <details>
-            <summary>🚀 Degrees</summary>
-			<div class="content">
-				Postgraduate: Master of Business Administration (MBA), 2004
-				Bachelor's Degree in Computer Science, Faculty of Physical and Mathematical Sciences, 2001.
-				Bilingual Teacher (Truncated) 2006
-			</div>
-        </details>
+    <!-- 4 -->
+    <div class="item">
+        <div class="item-header" onclick="toggleItem(this)">
+            <div class="title">Technology &amp; Business Expertise</div>
+            <button class="toggle" aria-label="Expand">+</button>
+        </div>
 
+        <div class="content">
+            MBA with extensive experience across end-to-end complex technological
+            environments, including data ecosystems, infrastructure, integration,
+            platforms, analytics and visualization, particularly within highly
+            secure and regulated environments. Brings the technical depth to
+            challenge assumptions and identify risks, combined with the business,
+            financial and organizational perspective required to lead large-scale
+            transformation.
+        </div>
+    </div>
 
+    <!-- 5 -->
+    <div class="item">
+        <div class="item-header" onclick="toggleItem(this)">
+            <div class="title">English Proficiency</div>
+            <button class="toggle" aria-label="Expand">+</button>
+        </div>
 
+        <div class="content">
+            Advanced English proficiency (TOEFL: 584).
+        </div>
+    </div>
 
+    <!-- 6 -->
+    <div class="item">
+        <div class="item-header" onclick="toggleItem(this)">
+            <div class="title">Postgraduate Degree</div>
+            <button class="toggle" aria-label="Expand">+</button>
+        </div>
 
+        <div class="content">
+            Master of Business Administration (MBA), 2004.
+        </div>
+    </div>
 
+    <!-- 7 -->
+    <div class="item">
+        <div class="item-header" onclick="toggleItem(this)">
+            <div class="title">Undergraduate Degree</div>
+            <button class="toggle" aria-label="Expand">+</button>
+        </div>
 
+        <div class="content">
+            Bachelor's Degree in Computer Science, Faculty of Physical and
+            Mathematical Sciences, 2001.
+        </div>
+    </div>
 
 </div>
 

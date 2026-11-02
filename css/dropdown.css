@@ -1,11 +1,7 @@
-
 /* Contenedor del menú */
 .dropdown {
-    position: absolute;
+    position: relative;
     display: inline-block;
-    top: 7%;
-    left: 75%;
-	z-index: 20000;
 }
 
 /* El menú flotante (Oculto por defecto) */
@@ -13,6 +9,7 @@
     position: absolute;
     top: 100%; /* Se pega justo debajo del enlace para que no se cierre */
     right: 0;
+    z-index: 1000;
     display: none; /* Evita que las opciones salgan disparadas como enlaces comunes */
     min-width: 160px;
     background-color: white;
@@ -21,13 +18,11 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     list-style: none;
     padding: 5px 0;
-	z-index: 20000;
 }
 
 /* Muestra el menú al pasar el ratón por encima del contenedor */
 .dropdown:hover .dropdown-menu {
     display: block;
-	z-index: 20000;
 }
 
 /* Los enlaces que están tanto en la barra como dentro del menú */

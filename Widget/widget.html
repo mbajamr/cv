@@ -1,0 +1,26 @@
+    <!-- HTML WIDGET CODE -->
+    <div id="custom-chat-widget">
+        <div class="chat-window">
+			<!-- Locate this area in your index.php and update it with the ID -->
+			<div class="chat-header">
+				<div style="font-size:20px;">🤖</div>
+				<div>
+					<h4 style="margin:0;">Live Support</h4>
+					<span id="chat-header-status" style="font-size:12px; opacity:0.8;">Online</span>
+				</div>
+			</div>
+
+            <div class="chat-messages" id="chat-messages-container">
+                <div class="message inbound">Hello! Type a message below to test our local database connection.</div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" id="chat-user-input" placeholder="Type a message..." autocomplete="off">
+                <button id="chat-send-btn">Send</button>
+            </div>
+        </div>
+        <div class="chat-bubble" id="chat-toggle-bubble">
+            <svg viewBox="0 0 24 24" id="chat-icon-svg">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+        </div>
+    </div>

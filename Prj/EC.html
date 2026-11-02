@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relevant Projects</title>
 
     <style>
         * {
@@ -13,7 +14,7 @@
             margin: 0;
             padding: 40px 20px;
             font-family: Arial, Helvetica, sans-serif;
-
+            background: #f5f7fa;
             color: #1f2937;
         }
 
@@ -71,7 +72,7 @@
             margin-left: 15px;
         }
 
-        .subcontent {
+        .content {
             display: none;
             padding: 0 20px 20px 20px;
             color: #4b5563;
@@ -101,107 +102,39 @@
                 font-size: 15px;
             }
         }
-
-        /* 2. ACCORDION STYLES */
-        details {
-            background-color: #ffffff;
-            margin-bottom: 15px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            overflow: hidden;
-            border: 1px solid #e2e8f0;
-            transition: box-shadow 0.3s ease;
-        }
-
-        /* Changes look when open */
-        details[open] {
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-            border-color: #007bff;
-        }
-
-        /* The clickable button header */
-        summary {
-            padding: 20px;
-            font-size: 1.25rem;
-            font-weight: 600;
-            cursor: pointer;
-            list-style: none; /* Hides default browser arrow */
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            user-select: none;
-            background-color: #ffffff;
-            color: #2d3748;
-        }
-
-        /* Custom indicator icon using CSS pseudo-elements */
-        summary::after {
-            content: "+";
-            font-size: 1.5rem;
-            font-weight: 300;
-            color: #007bff;
-            transition: transform 0.2s ease;
-        }
-
-        /* Rotate indicator icon when opened */
-        details[open] summary::after {
-            content: "−";
-            transform: rotate(180deg);
-        }
-
-        summary:hover {
-            background-color: #f8fafc;
-        }
-
-        /* Smooth reveal animation */
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-5px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Simple flex list for features */
-        .feature-list {
-            margin: 15px 0;
-            padding-left: 20px;
-        }
-        
-        .feature-list li {
-            margin-bottom: 8px;
-        }
-
-
     </style>
 </head>
 
 <body>
 
-    <div class="container">
-        
-        <div class="page-header">
-            <h1>Project: B2B E-Commerce – SAP Cloud & ERP Integration</h1>
-            <p>Click any section header below to instantly expand or collapse details.</p>
+<div class="container">
+
+    <h1>Project: B2B E-Commerce – SAP Cloud & ERP Integration</h1>
+
+    <!-- 1 -->
+    <div class="item">
+        <div class="item-header" onclick="toggleItem(this)">
+            <div class="title">1. Challenge</div>
+            <button class="toggle" aria-label="Expand">+</button>
         </div>
 
-        <!-- SECTION 1: CORE FEATURES -->
-        <details> <!-- Added "open" attribute so the first one defaults to unhidden -->
-            <summary>1. Challenge</summary>
-			<div class="content">
+        <div class="content">           
+
 The client needed to implement a B2B e-commerce platform in the SAP Cloud while preserving its existing on-premise SAP ERP infrastructure and established business processes.
 
 The implementation required secure communication between cloud and on-premise environments, coordinated security responsibilities across multiple organizations, and reliable data migration and synchronization. The solution also needed to accommodate specific business requirements without introducing unnecessary customizations or disrupting the existing ERP environment.
 
-			</div>
-        </details>
+        </div>
+    </div>
 
-        <details>
-            <summary>2. Objectives</summary>
-			<div class="content">
+    <!-- 2 -->
+    <div class="item">
+        <div class="item-header" onclick="toggleItem(this)">
+            <div class="title">2. Objectives</div>
+            <button class="toggle" aria-label="Expand">+</button>
+        </div>
+
+        <div class="content">
 - Implement an out-of-the-box B2B e-commerce solution on SAP Cloud.
 - Integrate the cloud platform with the client's existing on-premise SAP ERP environment.
 - Establish a consistent security architecture across both environments.
@@ -210,12 +143,17 @@ The implementation required secure communication between cloud and on-premise en
 - Adapt standard SAP functionality through targeted front-end and back-end customizations where necessary.
 - Prepare the existing SAP ECC environment to support the new digital commerce channel.
 
-			</div>
-        </details>
+        </div>
+    </div>
 
-        <details>
-            <summary>3. Actions</summary>
-			<div class="content">
+    <!-- 3 -->
+    <div class="item">
+        <div class="item-header" onclick="toggleItem(this)">
+            <div class="title">3. Actions</div>
+            <button class="toggle" aria-label="Expand">+</button>
+        </div>
+
+        <div class="content">
 - Coordinated with the client, SAP solution vendor, and consulting organization to define the technical architecture, system responsibilities, connectivity, and security requirements.
 - Designed the security architecture jointly with the respective security teams, establishing access boundaries and responsibilities across the cloud and on-premise environments.
 - Configured user management, business roles, organizational structures, and authorization rules to provide controlled access according to user types and business functions.
@@ -225,13 +163,17 @@ The implementation required secure communication between cloud and on-premise en
 - Implemented automated integration for information requiring ongoing exchange or synchronization between the cloud and on-premise systems.
 - Fine-tuned the client's on-premise SAP ECC environment to support the requirements of the new e-commerce platform and ensure coordinated operation across both environments.
 
+        </div>
+    </div>
 
-			</div>
-        </details>
+    <!-- 4 -->
+    <div class="item">
+        <div class="item-header" onclick="toggleItem(this)">
+            <div class="title">4. Results</div>
+            <button class="toggle" aria-label="Expand">+</button>
+        </div>
 
-        <details>
-            <summary>4. Results</summary>
-			<div class="content">
+        <div class="content">
 - Established a B2B digital commerce platform: Implemented SAP Cloud e-commerce capabilities while preserving the existing core ERP infrastructure.
 - Integrated cloud and on-premise systems: Enabled communication between the e-commerce platform and SAP ERP through defined integration mechanisms.
 - Implemented controlled access: Established a coordinated security model with role-based authorization and defined responsibilities across both environments.
@@ -239,18 +181,22 @@ The implementation required secure communication between cloud and on-premise en
 - Aligned standard functionality with business needs: Used out-of-the-box capabilities as the foundation, limiting customization to specific requirements.
 - Prepared the existing ERP environment: Fine-tuned SAP ECC to support the new digital commerce channel and its integration requirements.
 
-			</div>
-        </details>
+        </div>
+    </div>
 
-        <details>
-            <summary>5. Business Impact</summary>
-			<div class="content">
+    <!-- 5 -->
+    <div class="item">
+        <div class="item-header" onclick="toggleItem(this)">
+            <div class="title">5. Business Impact</div>
+            <button class="toggle" aria-label="Expand">+</button>
+        </div>
+
+        <div class="content">
 Extended the client's existing SAP ecosystem into a cloud-based B2B digital commerce channel without requiring immediate replacement of its core ERP infrastructure. The implementation established a hybrid cloud/on-premise architecture combining e-commerce functionality, enterprise integration, security, and data management, providing a foundation for digital commerce while preserving existing enterprise systems and business processes.
+        </div>
+    </div>
 
-			</div>
-        </details>
-
-	</div>
+</div>
 
 </body>
 </html>

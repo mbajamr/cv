@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relevant Projects</title>
 
     <style>
         * {
@@ -13,7 +14,7 @@
             margin: 0;
             padding: 40px 20px;
             font-family: Arial, Helvetica, sans-serif;
-
+            background: #f5f7fa;
             color: #1f2937;
         }
 
@@ -71,7 +72,7 @@
             margin-left: 15px;
         }
 
-        .subcontent {
+        .content {
             display: none;
             padding: 0 20px 20px 20px;
             color: #4b5563;
@@ -101,107 +102,38 @@
                 font-size: 15px;
             }
         }
-
-        /* 2. ACCORDION STYLES */
-        details {
-            background-color: #ffffff;
-            margin-bottom: 15px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            overflow: hidden;
-            border: 1px solid #e2e8f0;
-            transition: box-shadow 0.3s ease;
-        }
-
-        /* Changes look when open */
-        details[open] {
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-            border-color: #007bff;
-        }
-
-        /* The clickable button header */
-        summary {
-            padding: 20px;
-            font-size: 1.25rem;
-            font-weight: 600;
-            cursor: pointer;
-            list-style: none; /* Hides default browser arrow */
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            user-select: none;
-            background-color: #ffffff;
-            color: #2d3748;
-        }
-
-        /* Custom indicator icon using CSS pseudo-elements */
-        summary::after {
-            content: "+";
-            font-size: 1.5rem;
-            font-weight: 300;
-            color: #007bff;
-            transition: transform 0.2s ease;
-        }
-
-        /* Rotate indicator icon when opened */
-        details[open] summary::after {
-            content: "−";
-            transform: rotate(180deg);
-        }
-
-        summary:hover {
-            background-color: #f8fafc;
-        }
-
-        /* Smooth reveal animation */
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-5px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Simple flex list for features */
-        .feature-list {
-            margin: 15px 0;
-            padding-left: 20px;
-        }
-        
-        .feature-list li {
-            margin-bottom: 8px;
-        }
-
-
     </style>
 </head>
 
 <body>
 
-    <div class="container">
-        
-        <div class="page-header">
-            <h1>Project: Control Tower – Supply Chain Monitoring & Management</h1>
-            <p>Click any section header below to instantly expand or collapse details.</p>
+<div class="container">
+
+    <h1>Project: Control Tower – Supply Chain Monitoring & Management</h1>
+
+    <!-- 1 -->
+    <div class="item">
+        <div class="item-header" onclick="toggleItem(this)">
+            <div class="title">1. Challenge</div>
+            <button class="toggle" aria-label="Expand">+</button>
         </div>
 
-        <!-- SECTION 1: CORE FEATURES -->
-        <details> <!-- Added "open" attribute so the first one defaults to unhidden -->
-            <summary>1. Challenge</summary>
-			<div class="content">
+        <div class="content">           
 Supply-chain personnel needed to monitor delivery commitments, material availability, supplier activity, and shipment status across multiple Oracle ERP modules. Information was distributed across different screens and reports, making it difficult to obtain a consolidated operational view and quickly identify potential delivery risks or supply disruptions.
 
 The organization needed a centralized monitoring solution that could highlight exceptions, improve visibility into supply-chain execution, and support the objectives of improving customer service levels and reducing delivery lead times, while preserving existing ERP security controls.
 
-			</div>
-        </details>
+        </div>
+    </div>
 
-        <details>
-            <summary>2. Objectives</summary>
-			<div class="content">
+    <!-- 2 -->
+    <div class="item">
+        <div class="item-header" onclick="toggleItem(this)">
+            <div class="title">2. Objectives</div>
+            <button class="toggle" aria-label="Expand">+</button>
+        </div>
+
+        <div class="content">
 - Consolidate supply-chain information from multiple Oracle ERP modules into a single operational monitoring environment.
 - Improve visibility into suppliers, buyers, shipments, forecasts, and materials in transit.
 - Identify potential delivery delays, missing materials, and other supply-chain exceptions earlier.
@@ -209,12 +141,17 @@ The organization needed a centralized monitoring solution that could highlight e
 - Integrate existing Oracle ERP users, responsibilities, and permissions into the application's security model.
 - Provide configurable views tailored to different organizational roles and operational requirements.
 
-			</div>
-        </details>
+        </div>
+    </div>
 
-        <details>
-            <summary>3. Actions</summary>
-			<div class="content">
+    <!-- 3 -->
+    <div class="item">
+        <div class="item-header" onclick="toggleItem(this)">
+            <div class="title">3. Actions</div>
+            <button class="toggle" aria-label="Expand">+</button>
+        </div>
+
+        <div class="content">
 - Developed a web-based supply-chain monitoring system integrating information from multiple Oracle ERP functional modules.
 - Consolidated supplier, buyer, shipment, forecast, and material-in-transit information into a common operational view.
 - Implemented a traffic-light monitoring model to distinguish expected on-time deliveries from exceptions requiring attention.
@@ -223,13 +160,17 @@ The organization needed a centralized monitoring solution that could highlight e
 - Implemented configurable screening and presentation rules to adapt displayed information to different users, business functions, and monitoring requirements.
 - Designed the monitoring environment to help users focus on operational exceptions rather than manually reviewing multiple ERP screens and reports.
 
+        </div>
+    </div>
 
-			</div>
-        </details>
+    <!-- 4 -->
+    <div class="item">
+        <div class="item-header" onclick="toggleItem(this)">
+            <div class="title">4. Results</div>
+            <button class="toggle" aria-label="Expand">+</button>
+        </div>
 
-        <details>
-            <summary>4. Results</summary>
-			<div class="content">
+        <div class="content">
 - Centralized operational visibility: Consolidated supply-chain information from multiple ERP modules into a single monitoring environment.
 - Improved exception identification: Enabled users to identify potential delivery risks and supply disruptions through visual status indicators.
 - Better prioritization: Allowed operational teams to focus on exceptions that could affect delivery commitments.
@@ -237,18 +178,22 @@ The organization needed a centralized monitoring solution that could highlight e
 - Role-based monitoring: Supported different operational views through configurable information-screening and presentation rules.
 - Improved decision support: Connected supplier activity, material availability, shipment status, and forecasts to provide a more comprehensive view of supply-chain execution.
 
-			</div>
-        </details>
+        </div>
+    </div>
 
-        <details>
-            <summary>5. Business Impact</summary>
-			<div class="content">
+    <!-- 5 -->
+    <div class="item">
+        <div class="item-header" onclick="toggleItem(this)">
+            <div class="title">5. Business Impact</div>
+            <button class="toggle" aria-label="Expand">+</button>
+        </div>
+
+        <div class="content">
 Established a centralized supply-chain control point that transformed fragmented ERP information into a visual, exception-driven monitoring environment. By improving visibility into material availability, supplier performance, and delivery risks, Control Tower supported earlier identification of potential disruptions and more focused operational decision-making, contributing to the organization's goals of improving customer service levels and reducing delivery lead times.
+        </div>
+    </div>
 
-			</div>
-        </details>
-
-	</div>
+</div>
 
 </body>
 </html>

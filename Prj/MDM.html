@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relevant Projects</title>
 
     <style>
         * {
@@ -13,7 +14,7 @@
             margin: 0;
             padding: 40px 20px;
             font-family: Arial, Helvetica, sans-serif;
-
+            background: #f5f7fa;
             color: #1f2937;
         }
 
@@ -71,7 +72,7 @@
             margin-left: 15px;
         }
 
-        .subcontent {
+        .content {
             display: none;
             padding: 0 20px 20px 20px;
             color: #4b5563;
@@ -101,121 +102,59 @@
                 font-size: 15px;
             }
         }
-
-        /* 2. ACCORDION STYLES */
-        details {
-            background-color: #ffffff;
-            margin-bottom: 15px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            overflow: hidden;
-            border: 1px solid #e2e8f0;
-            transition: box-shadow 0.3s ease;
-        }
-
-        /* Changes look when open */
-        details[open] {
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-            border-color: #007bff;
-        }
-
-        /* The clickable button header */
-        summary {
-            padding: 20px;
-            font-size: 1.25rem;
-            font-weight: 600;
-            cursor: pointer;
-            list-style: none; /* Hides default browser arrow */
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            user-select: none;
-            background-color: #ffffff;
-            color: #2d3748;
-        }
-
-        /* Custom indicator icon using CSS pseudo-elements */
-        summary::after {
-            content: "+";
-            font-size: 1.5rem;
-            font-weight: 300;
-            color: #007bff;
-            transition: transform 0.2s ease;
-        }
-
-        /* Rotate indicator icon when opened */
-        details[open] summary::after {
-            content: "−";
-            transform: rotate(180deg);
-        }
-
-        summary:hover {
-            background-color: #f8fafc;
-        }
-
-        /* Smooth reveal animation */
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-5px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Simple flex list for features */
-        .feature-list {
-            margin: 15px 0;
-            padding-left: 20px;
-        }
-        
-        .feature-list li {
-            margin-bottom: 8px;
-        }
-
-
     </style>
 </head>
 
 <body>
 
-    <div class="container">
-        
-        <div class="page-header">
-            <h1>Project: ERP Modernization & Cloud MDM Transformation</h1>
-            <p>Click any section header below to instantly expand or collapse details.</p>
+<div class="container">
+
+    <h1>Project: ERP Modernization & Cloud MDM Transformation</h1>
+
+    <!-- 1 -->
+    <div class="item">
+        <div class="item-header" onclick="toggleItem(this)">
+            <div class="title">1. Challenge</div>
+            <button class="toggle" aria-label="Expand">+</button>
         </div>
 
-        <!-- SECTION 1: CORE FEATURES -->
-        <details> <!-- Added "open" attribute so the first one defaults to unhidden -->
-            <summary>1. Challenge</summary>
-			<div class="content">
+        <div class="content">           
+
 The organization was undertaking a four-year enterprise transformation program to modernize its ERP landscape and progressively transition critical Master Data Management (MDM) capabilities to the cloud.
 
 The transformation involved shared business data domains, including inventory, customers, and vendors, which support multiple enterprise systems and business processes. Migrating these capabilities required careful coordination between legacy ERP functionality, cloud services, development activities, and deployment processes while maintaining data consistency and business continuity.
 
 A key challenge was to modernize the existing architecture progressively, minimizing operational disruption while establishing a foundation for future cloud optimization.
 
-			</div>
-        </details>
+        </div>
+    </div>
 
-        <details>
-            <summary>2. Objectives</summary>
-			<div class="content">
+    <!-- 2 -->
+    <div class="item">
+        <div class="item-header" onclick="toggleItem(this)">
+            <div class="title">2. Objectives</div>
+            <button class="toggle" aria-label="Expand">+</button>
+        </div>
+
+        <div class="content">
 - Support the modernization of the enterprise ERP landscape and the transition of MDM capabilities to the cloud.
 - Migrate critical master data domains, including inventory, customers, and vendors, while preserving existing functionality.
 - Apply a phased modernization strategy, beginning with lift-and-shift/replatforming and progressing toward refactoring.
 - Coordinate development, testing, and deployment activities across the existing and target environments.
 - Maintain business continuity and data consistency throughout the transformation.
 - Contribute to program planning and coordination across technical teams and business stakeholders.
-			</div>
-        </details>
 
-        <details>
-            <summary>3. Actions</summary>
-			<div class="content">
+        </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="item">
+        <div class="item-header" onclick="toggleItem(this)">
+            <div class="title">3. Actions</div>
+            <button class="toggle" aria-label="Expand">+</button>
+        </div>
+
+        <div class="content">
 - Participated in development and deployment activities supporting the broader ERP modernization and cloud MDM transformation program.
 - Contributed to preparing, developing, testing, coordinating, and deploying changes within the enterprise environment.
 - Supported transition activities associated with moving existing MDM capabilities toward the cloud while preserving established functionality.
@@ -224,13 +163,17 @@ A key challenge was to modernize the existing architecture progressively, minimi
 - Participated partially in the program planning committee, contributing to the planning and coordination of transformation activities across business capabilities.
 - Supported work associated with shared master data domains, including inventory, customers, and vendors, where changes required careful management of dependencies and business continuity.
 
+        </div>
+    </div>
 
-			</div>
-        </details>
+    <!-- 4 -->
+    <div class="item">
+        <div class="item-header" onclick="toggleItem(this)">
+            <div class="title">4. Results</div>
+            <button class="toggle" aria-label="Expand">+</button>
+        </div>
 
-        <details>
-            <summary>4. Results</summary>
-			<div class="content">
+        <div class="content">
 - Supported a multi-year transformation: Contributed to a major enterprise modernization program over four years.
 - Advanced cloud migration activities: Participated in development and deployment work supporting the transition of MDM capabilities from the existing environment toward the cloud.
 - Supported phased modernization: Contributed within a strategy designed to preserve existing functionality during replatforming and enable subsequent architectural improvements through refactoring.
@@ -238,18 +181,22 @@ A key challenge was to modernize the existing architecture progressively, minimi
 - Supported critical data domains: Contributed to transformation activities involving inventory, customer, and vendor master data.
 - Maintained transparency on scope: Completed the period of involvement before all planned MDM migrations were finished, contributing to a defined portion of the overall transformation lifecycle.
 
-			</div>
-        </details>
+        </div>
+    </div>
 
-        <details>
-            <summary>5. Business Impact</summary>
-			<div class="content">
+    <!-- 5 -->
+    <div class="item">
+        <div class="item-header" onclick="toggleItem(this)">
+            <div class="title">5. Business Impact</div>
+            <button class="toggle" aria-label="Expand">+</button>
+        </div>
+
+        <div class="content">
 Contributed to the organization's long-term transition toward a more cloud-oriented enterprise architecture by supporting ERP modernization and the progressive migration of critical MDM capabilities. The work formed part of a staged approach designed to preserve existing business functionality, manage transformation risks, and establish the foundation for future cloud optimization.
+        </div>
+    </div>
 
-			</div>
-        </details>
-
-	</div>
+</div>
 
 </body>
 </html>

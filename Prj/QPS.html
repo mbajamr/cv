@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relevant Projects</title>
 
     <style>
         * {
@@ -13,7 +14,7 @@
             margin: 0;
             padding: 40px 20px;
             font-family: Arial, Helvetica, sans-serif;
-
+            background: #f5f7fa;
             color: #1f2937;
         }
 
@@ -71,7 +72,7 @@
             margin-left: 15px;
         }
 
-        .subcontent {
+        .content {
             display: none;
             padding: 0 20px 20px 20px;
             color: #4b5563;
@@ -101,118 +102,52 @@
                 font-size: 15px;
             }
         }
-
-        /* 2. ACCORDION STYLES */
-        details {
-            background-color: #ffffff;
-            margin-bottom: 15px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            overflow: hidden;
-            border: 1px solid #e2e8f0;
-            transition: box-shadow 0.3s ease;
-        }
-
-        /* Changes look when open */
-        details[open] {
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-            border-color: #007bff;
-        }
-
-        /* The clickable button header */
-        summary {
-            padding: 20px;
-            font-size: 1.25rem;
-            font-weight: 600;
-            cursor: pointer;
-            list-style: none; /* Hides default browser arrow */
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            user-select: none;
-            background-color: #ffffff;
-            color: #2d3748;
-        }
-
-        /* Custom indicator icon using CSS pseudo-elements */
-        summary::after {
-            content: "+";
-            font-size: 1.5rem;
-            font-weight: 300;
-            color: #007bff;
-            transition: transform 0.2s ease;
-        }
-
-        /* Rotate indicator icon when opened */
-        details[open] summary::after {
-            content: "−";
-            transform: rotate(180deg);
-        }
-
-        summary:hover {
-            background-color: #f8fafc;
-        }
-
-        /* Smooth reveal animation */
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-5px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Simple flex list for features */
-        .feature-list {
-            margin: 15px 0;
-            padding-left: 20px;
-        }
-        
-        .feature-list li {
-            margin-bottom: 8px;
-        }
-
-
     </style>
 </head>
 
 <body>
 
-    <div class="container">
-        
-        <div class="page-header">
-            <h1>Project: Enterprise Supplier Management & Quality Reporting Platform</h1>
-            <p>Click any section header below to instantly expand or collapse details.</p>
+<div class="container">
+
+    <h1>Project: Enterprise Supplier Management & Quality Reporting Platform</h1>
+
+    <!-- 1 -->
+    <div class="item">
+        <div class="item-header" onclick="toggleItem(this)">
+            <div class="title">1. Challenge</div>
+            <button class="toggle" aria-label="Expand">+</button>
         </div>
 
-        <!-- SECTION 1: CORE FEATURES -->
-        <details> <!-- Added "open" attribute so the first one defaults to unhidden -->
-            <summary>1. Challenge</summary>
-			<div class="content">
+        <div class="content">           
 Supplier information was distributed across multiple enterprise systems, including Oracle databases and BAAN ERP tables, making it difficult to consolidate data and provide a consistent view of supplier quality and performance.
 The solution needed to support internal Supply Chain teams and external suppliers while maintaining strict security boundaries, particularly preventing external users from accessing sensitive ERP data directly.
+        </div>
+    </div>
 
-			</div>
-        </details>
+    <!-- 2 -->
+    <div class="item">
+        <div class="item-header" onclick="toggleItem(this)">
+            <div class="title">2. Objectives</div>
+            <button class="toggle" aria-label="Expand">+</button>
+        </div>
 
-        <details>
-            <summary>2. Objectives</summary>
-			<div class="content">
+        <div class="content">
 Consolidate supplier information from multiple operational data sources.
 Provide secure, role-appropriate access to reporting for internal and external users.
 Automate data processing, report generation, and periodic information updates.
 Enable supplier qualification, performance evaluation, and identification of improvement opportunities.
 Provide flexible reporting capabilities to support both standard and complex business requirements.
+        </div>
+    </div>
 
-			</div>
-        </details>
+    <!-- 3 -->
+    <div class="item">
+        <div class="item-header" onclick="toggleItem(this)">
+            <div class="title">3. Actions</div>
+            <button class="toggle" aria-label="Expand">+</button>
+        </div>
 
-        <details>
-            <summary>3. Actions</summary>
-			<div class="content">
+        <div class="content">
 Designed and supported an integrated architecture connecting Oracle databases, BAAN ERP tables, and multiple reporting applications.
 Developed PL/SQL functions and stored procedures to consolidate and process data into reporting structures.
 Implemented scheduled processing through concurrent programs and Unix scripts to refresh information and generate reports automatically.
@@ -220,32 +155,44 @@ Integrated Oracle Forms, Reports, and Discoverer with Java, JSP, ASP, HTML, and 
 Established separate access mechanisms for internal and external users, using Oracle SSO for internal access and controlled ASP-based access for suppliers.
 Enabled secure external distribution of PDF reports generated through Oracle Reports, avoiding direct exposure of ERP data.
 Developed supplier-performance reporting covering rejections, nonconformities, corrective actions, supplier charges, administrative costs, and rejection indexes, including top-ten analyses.
+        </div>
+    </div>
 
+    <!-- 4 -->
+    <div class="item">
+        <div class="item-header" onclick="toggleItem(this)">
+            <div class="title">4. Results</div>
+            <button class="toggle" aria-label="Expand">+</button>
+        </div>
 
-			</div>
-        </details>
-
-        <details>
-            <summary>4. Results</summary>
-			<div class="content">
+        <div class="content">
 Centralized supplier information: Consolidated data from multiple enterprise systems into a structured reporting environment.
 Improved supplier-performance visibility: Enabled Supply Chain personnel to monitor supplier quality, evaluate performance, and identify recurring issues.
 Strengthened information security: Provided external access to selected supplier information without granting direct access to the underlying ERP environment.
 Automated reporting processes: Established scheduled data consolidation and report generation, reducing reliance on manual information gathering.
 Supported continuous improvement: Provided actionable indicators to identify problem areas, prioritize corrective actions, and support supplier evaluation and qualification.
+        </div>
+    </div>
 
-			</div>
-        </details>
+    <!-- 5 -->
+    <div class="item">
+        <div class="item-header" onclick="toggleItem(this)">
+            <div class="title">5. Business Impact</div>
+            <button class="toggle" aria-label="Expand">+</button>
+        </div>
 
-        <details>
-            <summary>5. Business Impact</summary>
-			<div class="content">
+        <div class="content">
 Established an enterprise-wide supplier management and quality reporting platform that connected legacy enterprise applications, internal business processes, and external supplier communication. The system transformed fragmented operational data into secure, actionable information, supporting more structured supplier-performance management and continuous improvement across the Supply Chain organization.
+        </div>
+    </div>
 
-			</div>
-        </details>
-
-	</div>
+</div>
 
 </body>
 </html>
+
+
+
+
+
+

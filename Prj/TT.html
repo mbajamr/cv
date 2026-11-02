@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relevant Projects</title>
 
     <style>
         * {
@@ -13,7 +14,7 @@
             margin: 0;
             padding: 40px 20px;
             font-family: Arial, Helvetica, sans-serif;
-
+            background: #f5f7fa;
             color: #1f2937;
         }
 
@@ -71,7 +72,7 @@
             margin-left: 15px;
         }
 
-        .subcontent {
+        .content {
             display: none;
             padding: 0 20px 20px 20px;
             color: #4b5563;
@@ -101,119 +102,58 @@
                 font-size: 15px;
             }
         }
-
-        /* 2. ACCORDION STYLES */
-        details {
-            background-color: #ffffff;
-            margin-bottom: 15px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            overflow: hidden;
-            border: 1px solid #e2e8f0;
-            transition: box-shadow 0.3s ease;
-        }
-
-        /* Changes look when open */
-        details[open] {
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-            border-color: #007bff;
-        }
-
-        /* The clickable button header */
-        summary {
-            padding: 20px;
-            font-size: 1.25rem;
-            font-weight: 600;
-            cursor: pointer;
-            list-style: none; /* Hides default browser arrow */
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            user-select: none;
-            background-color: #ffffff;
-            color: #2d3748;
-        }
-
-        /* Custom indicator icon using CSS pseudo-elements */
-        summary::after {
-            content: "+";
-            font-size: 1.5rem;
-            font-weight: 300;
-            color: #007bff;
-            transition: transform 0.2s ease;
-        }
-
-        /* Rotate indicator icon when opened */
-        details[open] summary::after {
-            content: "−";
-            transform: rotate(180deg);
-        }
-
-        summary:hover {
-            background-color: #f8fafc;
-        }
-
-        /* Smooth reveal animation */
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-5px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Simple flex list for features */
-        .feature-list {
-            margin: 15px 0;
-            padding-left: 20px;
-        }
-        
-        .feature-list li {
-            margin-bottom: 8px;
-        }
-
-
     </style>
 </head>
 
 <body>
 
-    <div class="container">
-        
-        <div class="page-header">
-            <h1>Project: Technology Transformation & Strategic Operations</h1>
-            <p>Click any section header below to instantly expand or collapse details.</p>
+<div class="container">
+
+    <h1>Project: Technology Transformation & Strategic Operations</h1>
+
+    <!-- 1 -->
+    <div class="item">
+        <div class="item-header" onclick="toggleItem(this)">
+            <div class="title">1. Challenge</div>
+            <button class="toggle" aria-label="Expand">+</button>
         </div>
 
-        <!-- SECTION 1: CORE FEATURES -->
-        <details> <!-- Added "open" attribute so the first one defaults to unhidden -->
-            <summary>1. Challenge</summary>
-			<div class="content">
+        <div class="content">           
+
 The organization was executing a large-scale technology transformation involving thousands of technology professionals, substantial annual financial commitments, and multiple technology domains.
 
 The scale and complexity of the transformation required close coordination across technology delivery, commercial management, finance, contracts, and resource planning. Rapid organizational growth added further challenges in workforce capacity planning, identifying resource gaps, managing risks, and maintaining alignment between business priorities, delivery commitments, and financial objectives.
 
-			</div>
-        </details>
+        </div>
+    </div>
 
-        <details>
-            <summary>2. Objectives</summary>
-			<div class="content">
+    <!-- 2 -->
+    <div class="item">
+        <div class="item-header" onclick="toggleItem(this)">
+            <div class="title">2. Objectives</div>
+            <button class="toggle" aria-label="Expand">+</button>
+        </div>
+
+        <div class="content">
+
 - Support coordination across technology delivery, commercial management, finance, contracts, and resource planning.
 - Align workforce capacity and staffing plans with evolving business requirements and transformation priorities.
 - Identify resource gaps, operational risks, and issues requiring escalation.
 - Support financial and commercial management to maintain alignment between delivery commitments, available resources, and financial plans.
 - Contribute to strategic discussions and leadership decision-making on organizational requirements, data governance, and transformation priorities.
 
-			</div>
-        </details>
+        </div>
+    </div>
 
-        <details>
-            <summary>3. Actions</summary>
-			<div class="content">
+    <!-- 3 -->
+    <div class="item">
+        <div class="item-header" onclick="toggleItem(this)">
+            <div class="title">3. Actions</div>
+            <button class="toggle" aria-label="Expand">+</button>
+        </div>
+
+        <div class="content">
+
 - Collaborated with transformation leadership and directors responsible for commercial management, finance, contracts, resource planning, and technology delivery.
 - Supported capacity and staffing planning during a period of significant organizational growth.
 - Helped identify workforce gaps, planning risks, and issues requiring management attention or escalation.
@@ -222,13 +162,17 @@ The scale and complexity of the transformation required close coordination acros
 - Participated in strategic discussions involving data governance, organizational design requirements, resource planning, and transformation priorities.
 - Contributed to cross-functional coordination and leadership decision support across a complex, multi-technology organization.
 
+        </div>
+    </div>
 
-			</div>
-        </details>
+    <!-- 4 -->
+    <div class="item">
+        <div class="item-header" onclick="toggleItem(this)">
+            <div class="title">4. Results</div>
+            <button class="toggle" aria-label="Expand">+</button>
+        </div>
 
-        <details>
-            <summary>4. Results</summary>
-			<div class="content">
+        <div class="content">
 - Supported large-scale transformation governance: Contributed to coordination across a technology organization comprising thousands of professionals.
 - Strengthened capacity planning: Helped identify staffing gaps and align resource planning with changing business requirements.
 - Improved risk visibility: Supported the identification and escalation of resource and organizational issues requiring management attention.
@@ -236,18 +180,22 @@ The scale and complexity of the transformation required close coordination acros
 - Enabled strategic decision support: Participated in leadership discussions addressing organizational requirements, data governance, and transformation priorities.
 - Strengthened cross-functional collaboration: Worked across technology, finance, commercial, contracts, and resource management functions.
 
-			</div>
-        </details>
+        </div>
+    </div>
 
-        <details>
-            <summary>5. Business Impact</summary>
-			<div class="content">
+    <!-- 5 -->
+    <div class="item">
+        <div class="item-header" onclick="toggleItem(this)">
+            <div class="title">5. Business Impact</div>
+            <button class="toggle" aria-label="Expand">+</button>
+        </div>
+
+        <div class="content">
 Contributed to the governance and coordination of a large-scale technology transformation by connecting workforce planning, financial and commercial management, and technology delivery priorities. The work supported leadership visibility into organizational capacity, resource risks, and transformation requirements, helping maintain alignment across a complex technology organization during a period of significant growth.
+        </div>
+    </div>
 
-			</div>
-        </details>
-
-	</div>
+</div>
 
 </body>
 </html>
