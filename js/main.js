@@ -1,5 +1,5 @@
     function getFullUrl(url) {
-      const baseurl = "cvjs/"+url
+      const baseurl = "cv/"+url
       const fullUrl = new URL(baseurl, window.location.origin).href;
       console.log(fullUrl);
 	  return fullUrl
