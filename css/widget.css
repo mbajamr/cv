@@ -37,21 +37,42 @@
         }
         .chat-bubble:hover { transform: scale(1.05); }
         .chat-bubble svg { width: 24px; height: 24px; fill: none; stroke: #ffffff; stroke-width: 2; }
-        .chat-window {
-            width: 360px;
-            height: 480px;
-            background-color: var(--chat-bg);
-            border-radius: 16px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 16px;
-            opacity: 0;
-            transform: translateY(20px) scale(0.95);
-            pointer-events: none;
-            transition: opacity 0.25s ease, transform 0.25s ease;
-            overflow: hidden;
-        }
+/* --- THE CLEAN CHAT WINDOW CSS CONFIGURATION --- */
+.chat-window {
+    position: fixed;
+    bottom: 90px; /* Sits cleanly above your floating toggle bubble icon */
+    right: 20px;
+    width: 360px;
+    height: 480px;
+    background-color: #ffffff;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    z-index: 99999; /* Higher layer index to sit cleanly on top when active */
+    
+    /* 🧼 THE VISIBILITY PATCH: Smooth fading transitions */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    
+    /* ⚠️ THE CRITICAL LAYER FIX: Tells the browser to let clicks pass completely 
+       THROUGH this invisible box to hit your accordions underneath when closed! */
+    pointer-events: none; 
+	display: none; 
+}
+
+/* --- WHEN ACTIVE/OPENED (.open class injected via your click event) --- */
+#custom-chat-widget.open .chat-window {
+    opacity: 1;
+    transform: translateY(0);
+    
+    /* 🔒 RE-ACTIVATE CLICKS: Allows the user to type and click buttons inside 
+       the window normally now that it is visible on screen! */
+    pointer-events: auto; 
+	display: flex; 
+}
+
         #custom-chat-widget.open .chat-window {
             opacity: 1;
             transform: translateY(0) scale(1);
