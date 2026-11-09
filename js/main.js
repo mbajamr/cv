@@ -144,15 +144,19 @@ document.addEventListener("DOMContentLoaded", function () {
 		loadHTML('Base/SubMenu.html','SubMenu');
 		loadHTML('Base/Main.html','Principal');
 		hideSection('contentSection3');
-		showSection('contentSection1');
-		showSection('contentSection2');
+		hideSection('contentSection1EP');
+		hideSection('contentSection2EP');
+		showSection('contentSection1Base');
+		showSection('contentSection2Base');
 	} else if (pSection == 'EP') {
 		loadHTML('EP/Menu.html','Menu');
 		loadHTML('EP/SubMenu.html','SubMenu');
 		loadHTML('EP/AFinancial.html','Principal');
 		hideSection('contentSection3');
-		showSection('contentSection1');
-		showSection('contentSection2');
+		hideSection('contentSection1');
+		hideSection('contentSection2');
+		showSection('contentSection1EP');
+		showSection('contentSection2EP');
 		if (pSubSection == 'AFinancial') {
 			loadHTML('EP/AFinancial.html','Principal');
 		} else if (pSubSection == 'ABanking') {
