@@ -146,6 +146,8 @@ document.addEventListener("DOMContentLoaded", function () {
 		hideSection('contentSection3');
 		hideSection('contentSection1EP');
 		hideSection('contentSection2EP');
+		hideSection('contentSection1Prj');
+		hideSection('contentSection2Prj');
 		showSection('contentSection1Base');
 		showSection('contentSection2Base');
 	} else if (pSection == 'EP') {
@@ -155,6 +157,8 @@ document.addEventListener("DOMContentLoaded", function () {
 		hideSection('contentSection3');
 		hideSection('contentSection1Base');
 		hideSection('contentSection2Base');
+		hideSection('contentSection1Prj');
+		hideSection('contentSection2Prj');
 		showSection('contentSection1EP');
 		showSection('contentSection2EP');
 		if (pSubSection == 'AFinancial') {
@@ -197,20 +201,30 @@ document.addEventListener("DOMContentLoaded", function () {
 	} else if (pSection == 'Ed') {
 		loadHTML('Ed/Main.html','PrincipalWide');
 		loadHTML('Ed/SubMenu.html','SubMenu');
-		hideSection('contentSection1');
-		hideSection('contentSection2');
+		hideSection('contentSection1EP');
+		hideSection('contentSection2EP');
+		hideSection('contentSection1Base');
+		hideSection('contentSection2Base');
+		hideSection('contentSection1Prj');
+		hideSection('contentSection2Prj');
 		showSection('contentSection3');
 	} else if (pSection == 'Sk') {
 		loadHTML('Sk/Main.html','PrincipalWide');
 		loadHTML('Sk/SubMenu.html','SubMenu');
-		hideSection('contentSection1');
-		hideSection('contentSection2');
+		hideSection('contentSection1EP');
+		hideSection('contentSection2EP');
+		hideSection('contentSection1Base');
+		hideSection('contentSection2Base');
+		hideSection('contentSection1Prj');
+		hideSection('contentSection2Prj');
 		showSection('contentSection3');
 	} else if (pSection == 'Crt') {
 		loadHTML('Cert/Main.html','PrincipalWide');
 		loadHTML('Cert/SubMenu.html','SubMenu');
-		hideSection('contentSection1');
-		hideSection('contentSection2');
+		hideSection('contentSection1EP');
+		hideSection('contentSection2EP');
+		hideSection('contentSection1Base');
+		hideSection('contentSection2Base');
 		showSection('contentSection3');
 		//updateCounts('All');
 		//filterCerts('AWS');
@@ -236,8 +250,12 @@ document.addEventListener("DOMContentLoaded", function () {
 		loadHTML('Prj/SubMenu.html','SubMenu');
 		loadHTML('Prj/QPS.html','Principal');
 		hideSection('contentSection3');
-		showSection('contentSection1');
-		showSection('contentSection2');
+		hideSection('contentSection1EP');
+		hideSection('contentSection2EP');
+		hideSection('contentSection1Base');
+		hideSection('contentSection2Base');
+		showSection('contentSection1Prj');
+		showSection('contentSection2Prj');
 		if (pSubSection == 'QPS') {
 			loadHTML('Prj/QPS.html','Principal');
 		} else if (pSubSection == 'PMKTSOT') {
