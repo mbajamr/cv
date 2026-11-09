@@ -98,7 +98,7 @@ function runWithHash(value) {
 	} 
 
 	// use hash here
-	console.log ("menu: " + menu + "  submenu: " + submenu);
+	//console.log ("menu: " + menu + "  submenu: " + submenu);
 	showDataList(menu,submenu);
 }
 
@@ -273,9 +273,9 @@ document.addEventListener("DOMContentLoaded", function () {
 			menu.value = pSection+"/"+pSubSection;
 			console.log ("menu.value  " + menu.value + " pSection: " + pSection + "   pSubSection: " + pSubSection);
 		}
-		else {
-			console.log ("not set  " + " pSection: " + pSection + "   pSubSection: " + pSubSection);
-		}
+		//else {
+		//	console.log ("not set  " + " pSection: " + pSection + "   pSubSection: " + pSubSection);
+		//}
 		//filterCerts('All');
 
 	} else if (pSection == 'Prj') {
