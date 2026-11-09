@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	if (pSection == 'Base') {
 		loadHTML('Base/Menu.html','Menu');
 		loadHTML('Base/SubMenu.html','SubMenu');
-		loadHTML('Base/Main.html','Principal');
+		loadHTML('Base/Main.html','PrincipalBase');
 		hideSection('contentSection3');
 		hideSection('contentSection1EP');
 		hideSection('contentSection2EP');
@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	} else if (pSection == 'EP') {
 		loadHTML('EP/Menu.html','Menu');
 		loadHTML('EP/SubMenu.html','SubMenu');
-		loadHTML('EP/AFinancial.html','Principal');
+		loadHTML('EP/AFinancial.html','PrincipalEP');
 		hideSection('contentSection3');
 		hideSection('contentSection1Base');
 		hideSection('contentSection2Base');
@@ -162,41 +162,41 @@ document.addEventListener("DOMContentLoaded", function () {
 		showSection('contentSection1EP');
 		showSection('contentSection2EP');
 		if (pSubSection == 'AFinancial') {
-			loadHTML('EP/AFinancial.html','Principal');
+			loadHTML('EP/AFinancial.html','PrincipalEP');
 		} else if (pSubSection == 'ABanking') {
-			loadHTML('EP/ABanking.html','Principal');				
+			loadHTML('EP/ABanking.html','PrincipalEP');				
 		} else if (pSubSection == 'ATele') {
-			loadHTML('EP/ATele.html','Principal');				
+			loadHTML('EP/ATele.html','PrincipalEP');				
 		} else if (pSubSection == 'AInsurance2') {
-			loadHTML('EP/AInsurance2.html','Principal');				
+			loadHTML('EP/AInsurance2.html','PrincipalEP');				
 		} else if (pSubSection == 'ABrewer') {
-			loadHTML('EP/ABrewer.html','Principal');				
+			loadHTML('EP/ABrewer.html','PrincipalEP');				
 		} else if (pSubSection == 'AFood') {
-			loadHTML('EP/AFood.html','Principal');				
+			loadHTML('EP/AFood.html','PrincipalEP');				
 		} else if (pSubSection == 'AInsurance1') {
-			loadHTML('EP/AInsurance1.html','Principal');				
+			loadHTML('EP/AInsurance1.html','PrincipalEP');				
 		} else if (pSubSection == 'AAirline') {
-			loadHTML('EP/AAirline.html','Principal');				
+			loadHTML('EP/AAirline.html','PrincipalEP');				
 		} else if (pSubSection == 'FAH') {
-			loadHTML('EP/FAH.html','Principal');				
+			loadHTML('EP/FAH.html','PrincipalEP');				
 		} else if (pSubSection == 'Emerson') {
-			loadHTML('EP/Emerson.html','Principal');				
+			loadHTML('EP/Emerson.html','PrincipalEP');				
 		} else if (pSubSection == 'Novem') {
-			loadHTML('EP/Novem.html','Principal');				
+			loadHTML('EP/Novem.html','PrincipalEP');				
 		} else if (pSubSection == 'VCEmmsa') {
-			loadHTML('EP/VCEmmsa.html','Principal');				
+			loadHTML('EP/VCEmmsa.html','PrincipalEP');				
 		} else if (pSubSection == 'VC711') {
-			loadHTML('EP/VC711.html','Principal');				
+			loadHTML('EP/VC711.html','PrincipalEP');				
 		} else if (pSubSection == 'VCMetalsa') {
-			loadHTML('EP/VCMetalsa.html','Principal');				
+			loadHTML('EP/VCMetalsa.html','PrincipalEP');				
 		} else if (pSubSection == 'PISD') {
-			loadHTML('EP/PISD.html','Principal');				
+			loadHTML('EP/PISD.html','PrincipalEP');				
 		} else if (pSubSection == 'ProlecGE') {
-			loadHTML('EP/ProlecGE.html','Principal');				
+			loadHTML('EP/ProlecGE.html','PrincipalEP');				
 		} else if (pSubSection == 'ATI') {
-			loadHTML('EP/ATI.html','Principal');				
+			loadHTML('EP/ATI.html','PrincipalEP');				
 		} else if (pSubSection == 'CINTERSAN') {
-			loadHTML('EP/CINTERSAN.html','Principal');				
+			loadHTML('EP/CINTERSAN.html','PrincipalEP');				
 		}
 	} else if (pSection == 'Ed') {
 		loadHTML('Ed/Main.html','PrincipalWide');
@@ -225,6 +225,8 @@ document.addEventListener("DOMContentLoaded", function () {
 		hideSection('contentSection2EP');
 		hideSection('contentSection1Base');
 		hideSection('contentSection2Base');
+		hideSection('contentSection1Prj');
+		hideSection('contentSection2Prj');
 		showSection('contentSection3');
 		//updateCounts('All');
 		//filterCerts('AWS');
@@ -248,7 +250,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	} else if (pSection == 'Prj') {
 		loadHTML('Prj/Menu.html','Menu');
 		loadHTML('Prj/SubMenu.html','SubMenu');
-		loadHTML('Prj/QPS.html','Principal');
+		loadHTML('Prj/QPS.html','PrincipalPrj');
 		hideSection('contentSection3');
 		hideSection('contentSection1EP');
 		hideSection('contentSection2EP');
@@ -257,23 +259,23 @@ document.addEventListener("DOMContentLoaded", function () {
 		showSection('contentSection1Prj');
 		showSection('contentSection2Prj');
 		if (pSubSection == 'QPS') {
-			loadHTML('Prj/QPS.html','Principal');
+			loadHTML('Prj/QPS.html','PrincipalPrj');
 		} else if (pSubSection == 'PMKTSOT') {
-			loadHTML('Prj/PMKTSOT.html','Principal');		
+			loadHTML('Prj/PMKTSOT.html','PrincipalPrj');		
 		} else if (pSubSection == 'PT') {
-			loadHTML('Prj/PT.html','Principal');
+			loadHTML('Prj/PT.html','PrincipalPrj');
 		} else if (pSubSection == 'CT') {
-			loadHTML('Prj/CT.html','Principal');
+			loadHTML('Prj/CT.html','PrincipalPrj');
 		} else if (pSubSection == 'AGILE') {
-			loadHTML('Prj/AGILE.html','Principal');
+			loadHTML('Prj/AGILE.html','PrincipalPrj');
 		} else if (pSubSection == 'EC') {
-			loadHTML('Prj/EC.html','Principal');
+			loadHTML('Prj/EC.html','PrincipalPrj');
 		} else if (pSubSection == 'DA') {
-			loadHTML('Prj/DA.html','Principal');
+			loadHTML('Prj/DA.html','PrincipalPrj');
 		} else if (pSubSection == 'MDM') {
-			loadHTML('Prj/MDM.html','Principal');
+			loadHTML('Prj/MDM.html','PrincipalPrj');
 		} else if (pSubSection == 'TT') {
-			loadHTML('Prj/TT.html','Principal');
+			loadHTML('Prj/TT.html','PrincipalPrj');
 		}
 	}
 }
