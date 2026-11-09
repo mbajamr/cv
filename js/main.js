@@ -229,7 +229,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		showSection('contentSection3');
 	} else if (pSection == 'Sk') {
 		loadHTML('Sk/Main.html','PrincipalWide');
-		loadHTML('Sk/SubMenu.html','SubMenuDk');
+		loadHTML('Sk/SubMenu.html','SubMenuSk');
 		hideSection('contentSection1EP');
 		hideSection('contentSection2EP');
 		hideSection('contentSection1Base');
