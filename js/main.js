@@ -142,24 +142,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	if (pSection == 'Base') {
 		loadHTML('Base/Menu.html','MenuBase');
-		loadHTML('Base/SubMenu.html','SubMenu');
+		loadHTML('Base/SubMenu.html','SubMenuBase');
 		loadHTML('Base/Main.html','PrincipalBase');
 		hideSection('contentSection3');
 		hideSection('contentSection1EP');
 		hideSection('contentSection2EP');
 		hideSection('contentSection1Prj');
 		hideSection('contentSection2Prj');
+		hideSection('SubMenuEP');
+		hideSection('SubMenuEd');
+		hideSection('SubMenuSk');
+		hideSection('SubMenuCrt');
+		hideSection('SubMenuPrj');
+		showSection('SubMenuBase');
 		showSection('contentSection1Base');
 		showSection('contentSection2Base');
 	} else if (pSection == 'EP') {
 		loadHTML('EP/Menu.html','MenuEP');
-		loadHTML('EP/SubMenu.html','SubMenu');
+		loadHTML('EP/SubMenu.html','SubMenuEP');
 		loadHTML('EP/AFinancial.html','PrincipalEP');
 		hideSection('contentSection3');
 		hideSection('contentSection1Base');
 		hideSection('contentSection2Base');
 		hideSection('contentSection1Prj');
 		hideSection('contentSection2Prj');
+		hideSection('SubMenuBase');
+		hideSection('SubMenuEd');
+		hideSection('SubMenuSk');
+		hideSection('SubMenuCrt');
+		hideSection('SubMenuPrj');
+		showSection('SubMenuEP');
 		showSection('contentSection1EP');
 		showSection('contentSection2EP');
 		if (pSubSection == 'AFinancial') {
@@ -201,33 +213,51 @@ document.addEventListener("DOMContentLoaded", function () {
 		}
 	} else if (pSection == 'Ed') {
 		loadHTML('Ed/Main.html','PrincipalWide');
-		loadHTML('Ed/SubMenu.html','SubMenu');
+		loadHTML('Ed/SubMenu.html','SubMenuEd');
 		hideSection('contentSection1EP');
 		hideSection('contentSection2EP');
 		hideSection('contentSection1Base');
 		hideSection('contentSection2Base');
 		hideSection('contentSection1Prj');
 		hideSection('contentSection2Prj');
+		hideSection('SubMenuBase');
+		hideSection('SubMenuEP');
+		hideSection('SubMenuSk');
+		hideSection('SubMenuCrt');
+		hideSection('SubMenuPrj');
+		showSection('SubMenuEd');
 		showSection('contentSection3');
 	} else if (pSection == 'Sk') {
 		loadHTML('Sk/Main.html','PrincipalWide');
-		loadHTML('Sk/SubMenu.html','SubMenu');
+		loadHTML('Sk/SubMenu.html','SubMenuDk');
 		hideSection('contentSection1EP');
 		hideSection('contentSection2EP');
 		hideSection('contentSection1Base');
 		hideSection('contentSection2Base');
 		hideSection('contentSection1Prj');
 		hideSection('contentSection2Prj');
+		hideSection('SubMenuBase');
+		hideSection('SubMenuEP');
+		hideSection('SubMenuEd');
+		hideSection('SubMenuCrt');
+		hideSection('SubMenuPrj');
+		showSection('SubMenuSk');
 		showSection('contentSection3');
 	} else if (pSection == 'Crt') {
 		loadHTML('Cert/Main.html','PrincipalWide');
-		loadHTML('Cert/SubMenu.html','SubMenu');
+		loadHTML('Cert/SubMenu.html','SubMenuCrt');
 		hideSection('contentSection1EP');
 		hideSection('contentSection2EP');
 		hideSection('contentSection1Base');
 		hideSection('contentSection2Base');
 		hideSection('contentSection1Prj');
 		hideSection('contentSection2Prj');
+		hideSection('SubMenuBase');
+		hideSection('SubMenuEP');
+		hideSection('SubMenuEd');
+		hideSection('SubMenuSk');
+		hideSection('SubMenuPrj');
+		showSection('SubMenuCrt');
 		showSection('contentSection3');
 		//updateCounts('All');
 		//filterCerts('AWS');
@@ -250,13 +280,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	} else if (pSection == 'Prj') {
 		loadHTML('Prj/Menu.html','MenuPrj');
-		loadHTML('Prj/SubMenu.html','SubMenu');
+		loadHTML('Prj/SubMenu.html','SubMenuPrj');
 		loadHTML('Prj/QPS.html','PrincipalPrj');
 		hideSection('contentSection3');
 		hideSection('contentSection1EP');
 		hideSection('contentSection2EP');
 		hideSection('contentSection1Base');
 		hideSection('contentSection2Base');
+		hideSection('SubMenuBase');
+		hideSection('SubMenuEP');
+		hideSection('SubMenuEd');
+		hideSection('SubMenuSk');
+		hideSection('SubMenuCrt');
+		showSection('SubMenuPrj');
 		showSection('contentSection1Prj');
 		showSection('contentSection2Prj');
 		if (pSubSection == 'QPS') {
