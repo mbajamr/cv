@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	//alert ("pSection: " + pSection);
 
 	if (pSection == 'Base') {
-		loadHTML('Base/Menu.html','Menu');
+		loadHTML('Base/Menu.html','MenuBase');
 		loadHTML('Base/SubMenu.html','SubMenu');
 		loadHTML('Base/Main.html','PrincipalBase');
 		hideSection('contentSection3');
@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		showSection('contentSection1Base');
 		showSection('contentSection2Base');
 	} else if (pSection == 'EP') {
-		loadHTML('EP/Menu.html','Menu');
+		loadHTML('EP/Menu.html','MenuEP');
 		loadHTML('EP/SubMenu.html','SubMenu');
 		loadHTML('EP/AFinancial.html','PrincipalEP');
 		hideSection('contentSection3');
@@ -248,7 +248,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		//filterCerts('All');
 
 	} else if (pSection == 'Prj') {
-		loadHTML('Prj/Menu.html','Menu');
+		loadHTML('Prj/Menu.html','MenuPrj');
 		loadHTML('Prj/SubMenu.html','SubMenu');
 		loadHTML('Prj/QPS.html','PrincipalPrj');
 		hideSection('contentSection3');
