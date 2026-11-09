@@ -17,7 +17,8 @@
 			const container = document.getElementById(id1);
 			container.innerHTML = res.html;
 		  } catch (err) {
-			console.log("res.html:  "+res.html+" id1  "+id1+" error:  "+err.message);
+			//console.log("res.html:  "+res.html+" id1  "+id1+" error:  "+err.message);
+			console.log(" id1  "+id1+" error:  "+err.message);
 		  }
 	
 		
