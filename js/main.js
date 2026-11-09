@@ -1,7 +1,7 @@
     function getFullUrl(url) {
       const baseurl = url
       const fullUrl = new URL(baseurl, window.location.origin).href;
-      console.log(fullUrl);
+      //console.log(fullUrl);
 	  return fullUrl
     }
 
@@ -116,7 +116,7 @@ function getMenu(pMenu) {
 document.addEventListener("DOMContentLoaded", function () {
 	const hash = window.location.hash.substring(1);
 	//hash = window.location.hash.substring(1)+"/All";
-	console.log ("hash: " + hash);
+	//console.log ("hash: " + hash);
 	
 	//const menu = document.getElementById("RP");
 	//console.log ("menu: " + menu);
@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function showDataList(pSection, pSubSection = null) {
 	//alert ("pSection: " + pSection);
-	console.log ("pSection: " + pSection + "   pSubSection: " + pSubSection);
+	//console.log ("pSection: " + pSection + "   pSubSection: " + pSubSection);
 
 	//const hash = window.location.hash.substring(1);
 
