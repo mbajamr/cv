@@ -153,8 +153,8 @@ document.addEventListener("DOMContentLoaded", function () {
 		loadHTML('EP/SubMenu.html','SubMenu');
 		loadHTML('EP/AFinancial.html','Principal');
 		hideSection('contentSection3');
-		hideSection('contentSection1');
-		hideSection('contentSection2');
+		hideSection('contentSection1Base');
+		hideSection('contentSection2Base');
 		showSection('contentSection1EP');
 		showSection('contentSection2EP');
 		if (pSubSection == 'AFinancial') {
