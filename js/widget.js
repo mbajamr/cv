@@ -344,7 +344,7 @@ fetch(`${BACKEND_URL}chat.php`, {
         'Content-Type': 'application/json',
         'X-Chat-Key': KEY_TOKEN // Injects the anonymous gate passkey signature
     },
-    body: JSON.stringify({ chatcode: chatCode, message: 'text', sender: 'user' })
+    body: JSON.stringify({ chatcode: chatCode, message: 'txt', sender: 'user' })
 });
 
 // 3. Make sure your typing check loop also includes it:
