@@ -49,10 +49,21 @@
 
 	}
 
+	.img-res {
+	  max-width: 100%;
+	  height: auto;
+	  display: block; /* Removes extra space below the image */
+	}
+
 
 	/* MOBILE RESPONSIVE STACK ADJUSTMENT */
 	@media (max-width: 768px) {
 		.tab-group, body:not(:has(.tab-group:target)) #home-group {
 			flex-direction: column;
+
+		.img-res {
+		  max-width: 50%;
+		  height: auto;/* Removes extra space below the image */
+	}
 		}
 	}
