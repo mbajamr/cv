@@ -173,7 +173,7 @@ async function handleSendMessage() {
         });
 
         const data = await response.json();
-        console.log("Server Response:", data);
+        //console.log("Server Response:", data);
         
         if (data.status === 'success') {
             if (chatInput) chatInput.value = ''; // Clear out the chat box text input on success
